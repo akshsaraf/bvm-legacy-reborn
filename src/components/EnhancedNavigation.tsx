@@ -66,7 +66,7 @@ const EnhancedNavigation = () => {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-bvm-navy rounded-full flex items-center justify-center">
-              <span className="text-background font-bold text-sm">BVM</span>
+              <span className="text-background font-bold text-sm"></span>
             </div>
             <div>
               <h1 className="font-playfair font-bold text-lg text-bvm-navy"></h1>
