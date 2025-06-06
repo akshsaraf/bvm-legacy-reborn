@@ -1,21 +1,68 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import DisclaimerBanner from '@/components/DisclaimerBanner';
-import Navigation from '@/components/Navigation';
+import EnhancedNavigation from '@/components/EnhancedNavigation';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import WhyChooseBVMSection from '@/components/WhyChooseBVMSection';
 import AcademicsSection from '@/components/AcademicsSection';
+import FilterableGallery from '@/components/FilterableGallery';
+import LikeCounter from '@/components/LikeCounter';
 
 const Index = () => {
+  useEffect(() => {
+    // Add scroll-triggered animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in-up');
+        }
+      });
+    }, observerOptions);
+
+    // Observe sections for animation
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen">
       <DisclaimerBanner />
-      <Navigation />
+      <EnhancedNavigation />
       <HeroSection />
+      <LikeCounter />
       <AboutSection />
       <WhyChooseBVMSection />
       <AcademicsSection />
+      <FilterableGallery />
+      
+      {/* Contact Section */}
+      <section id="contact" className="section-padding bg-heritage-gradient text-background">
+        <div className="container-width text-center">
+          <h2 className="font-playfair text-4xl font-bold mb-8">Get in Touch</h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
+              <p className="mb-2">Principal: Mr. Anil Kumar Sharma</p>
+              <p className="mb-2">Email: info@birlavidyamandir.com</p>
+              <p className="mb-2">Phone: +91-XX-XXXX-XXXX</p>
+              <p>Address: Tallital, Nainital - 263002, Uttarakhand</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Admission Inquiries</h3>
+              <p className="mb-4">Admission Period: November - March</p>
+              <p className="mb-4">For detailed information about admissions, curriculum, and campus life, please contact our admissions office.</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
