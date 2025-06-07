@@ -13,6 +13,8 @@ import LikeCounter from '@/components/LikeCounter';
 import LiveStats from '@/components/LiveStats';
 import EventCalendar from '@/components/EventCalendar';
 import RecognitionWall from '@/components/RecognitionWall';
+import BVMCultureCards from '@/components/BVMCultureCards';
+import LiveEngagement from '@/components/LiveEngagement';
 
 const Index = () => {
   useEffect(() => {
@@ -52,6 +54,8 @@ const Index = () => {
       <BVMCulture />
       <EventCalendar />
       <RecognitionWall />
+      <BVMCultureCards />
+      <LiveEngagement />
       <StaticGallery />
       
       {/* Contact Section */}
