@@ -136,6 +136,10 @@
   .animate-glow {
     animation: glow 2s ease-in-out infinite alternate;
   }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
 }
 
 @keyframes fadeIn {
@@ -177,6 +181,15 @@
   }
   to {
     box-shadow: 0 0 10px hsl(var(--bvm-gold)), 0 0 20px hsl(var(--bvm-gold)), 0 0 30px hsl(var(--bvm-gold));
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
 

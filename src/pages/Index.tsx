@@ -2,11 +2,14 @@
 import React, { useEffect } from 'react';
 import DisclaimerBanner from '@/components/DisclaimerBanner';
 import EnhancedNavigation from '@/components/EnhancedNavigation';
+import LoadingScreen from '@/components/LoadingScreen';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import WhyChooseBVMSection from '@/components/WhyChooseBVMSection';
 import AcademicsSection from '@/components/AcademicsSection';
-import FilterableGallery from '@/components/FilterableGallery';
+import DayAtBVM from '@/components/DayAtBVM';
+import BVMCulture from '@/components/BVMCulture';
+import StaticGallery from '@/components/StaticGallery';
 import LikeCounter from '@/components/LikeCounter';
 
 const Index = () => {
@@ -34,14 +37,17 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <LoadingScreen />
       <DisclaimerBanner />
       <EnhancedNavigation />
-      <HeroSection />
       <LikeCounter />
+      <HeroSection />
       <AboutSection />
       <WhyChooseBVMSection />
       <AcademicsSection />
-      <FilterableGallery />
+      <DayAtBVM />
+      <BVMCulture />
+      <StaticGallery />
       
       {/* Contact Section */}
       <section id="contact" className="section-padding bg-heritage-gradient text-background">
