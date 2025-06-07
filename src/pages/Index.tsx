@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import DisclaimerBanner from '@/components/DisclaimerBanner';
 import EnhancedNavigation from '@/components/EnhancedNavigation';
@@ -11,6 +10,9 @@ import DayAtBVM from '@/components/DayAtBVM';
 import BVMCulture from '@/components/BVMCulture';
 import StaticGallery from '@/components/StaticGallery';
 import LikeCounter from '@/components/LikeCounter';
+import LiveStats from '@/components/LiveStats';
+import EventCalendar from '@/components/EventCalendar';
+import RecognitionWall from '@/components/RecognitionWall';
 
 const Index = () => {
   useEffect(() => {
@@ -43,10 +45,13 @@ const Index = () => {
       <LikeCounter />
       <HeroSection />
       <AboutSection />
+      <LiveStats />
       <WhyChooseBVMSection />
       <AcademicsSection />
       <DayAtBVM />
       <BVMCulture />
+      <EventCalendar />
+      <RecognitionWall />
       <StaticGallery />
       
       {/* Contact Section */}
