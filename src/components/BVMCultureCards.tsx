@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Shirt, Home, Calendar, Pray, Moon, Handshake } from 'lucide-react';
+import { Shirt, Home, Calendar, Church, Moon, Handshake } from 'lucide-react';
 
 const BVMCultureCards = () => {
   const [flippedCards, setFlippedCards] = useState<number[]>([]);
@@ -26,7 +26,7 @@ const BVMCultureCards = () => {
     },
     {
       title: "Sanskrit Prayers",
-      icon: <Pray className="h-8 w-8" />,
+      icon: <Church className="h-8 w-8" />,
       frontColor: "bg-bvm-navy",
       backContent: "Every meal and assembly begins with traditional Sanskrit mantras.",
     },
