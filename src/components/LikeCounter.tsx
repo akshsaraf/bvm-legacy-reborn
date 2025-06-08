@@ -33,8 +33,12 @@ const LikeCounter = () => {
       
       if (response.ok) {
         const data = await response.json();
-        setLikes(data.likes || 0);
+        console.log('API response:', data);
+        // Handle both possible response formats
+        const likeCount = data.likeCount || data.likes || 0;
+        setLikes(likeCount);
       } else {
+        console.error('API response not ok:', response.status);
         // Fallback to localStorage
         const storedLikes = localStorage.getItem('bvm-likes');
         setLikes(storedLikes ? parseInt(storedLikes) : 0);
@@ -60,6 +64,7 @@ const LikeCounter = () => {
       setLikes(newLikes);
       setHasLiked(true);
       localStorage.setItem('bvm-user-liked', 'true');
+      localStorage.setItem('bvm-likes', newLikes.toString());
 
       // Make API call
       const response = await fetch(apiBaseUrl, {
@@ -73,14 +78,20 @@ const LikeCounter = () => {
         })
       });
 
-      if (!response.ok) {
-        // If API fails, store in localStorage as backup
-        localStorage.setItem('bvm-likes', newLikes.toString());
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Like posted successfully:', data);
+        // Update with server response if different
+        const serverLikes = data.likeCount || data.likes;
+        if (serverLikes !== undefined) {
+          setLikes(serverLikes);
+          localStorage.setItem('bvm-likes', serverLikes.toString());
+        }
+      } else {
+        console.error('Failed to post like:', response.status);
       }
     } catch (error) {
       console.error('Error posting like:', error);
-      // Store in localStorage as backup
-      localStorage.setItem('bvm-likes', likes.toString());
     } finally {
       // Reset animation
       setTimeout(() => setIsAnimating(false), 600);
