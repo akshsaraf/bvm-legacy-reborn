@@ -6,6 +6,7 @@ interface GlassyPanelProps {
   children: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
+  onClick?: () => void;
   blur?: 'light' | 'medium' | 'strong';
   opacity?: 'low' | 'medium' | 'high';
 }
@@ -14,6 +15,7 @@ const GlassyPanel = ({
   children, 
   className,
   style,
+  onClick,
   blur = 'medium', 
   opacity = 'medium' 
 }: GlassyPanelProps) => {
@@ -39,6 +41,7 @@ const GlassyPanel = ({
         className
       )}
       style={style}
+      onClick={onClick}
     >
       {children}
     </div>
