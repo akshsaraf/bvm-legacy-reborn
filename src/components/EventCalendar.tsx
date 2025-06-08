@@ -1,6 +1,6 @@
-
 import React, { useState } from 'react';
 import { Calendar } from 'lucide-react';
+import GlassyPanel from '@/components/GlassyPanel';
 
 const EventCalendar = () => {
   const [selectedMonth, setSelectedMonth] = useState<number | null>(null);
@@ -109,23 +109,26 @@ const EventCalendar = () => {
   return (
     <section className="section-padding bg-heritage-gradient text-background">
       <div className="container-width">
-        <div className="text-center mb-12">
-          <h2 className="font-playfair text-4xl font-bold mb-4">Life at BVM Through the Year</h2>
-          <div className="w-24 h-1 bg-bvm-gold mx-auto rounded-full"></div>
-        </div>
+        <GlassyPanel className="p-8 mb-12" blur="medium" opacity="low">
+          <div className="text-center">
+            <h2 className="font-playfair text-4xl font-bold mb-4">Life at BVM Through the Year</h2>
+            <div className="w-24 h-1 bg-bvm-gold mx-auto rounded-full"></div>
+          </div>
+        </GlassyPanel>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {months.map((month, index) => (
-            <div
+            <GlassyPanel
               key={index}
               className={`
-                relative bg-background/10 backdrop-blur-sm rounded-xl p-6 cursor-pointer
-                transition-all duration-300 hover:bg-background/20 hover:scale-105
+                p-6 cursor-pointer transition-all duration-300 hover:scale-105
                 border-2 ${index === currentMonth ? 'border-bvm-gold shadow-lg shadow-bvm-gold/20' : 'border-background/20'}
                 animate-fade-in
               `}
               style={{ animationDelay: `${index * 100}ms` }}
               onClick={() => setSelectedMonth(selectedMonth === index ? null : index)}
+              blur="medium"
+              opacity="low"
             >
               {index === currentMonth && (
                 <div className="absolute -top-2 -right-2 bg-bvm-gold text-bvm-navy rounded-full p-2 animate-pulse">
@@ -153,15 +156,17 @@ const EventCalendar = () => {
                   </p>
                 </div>
               )}
-            </div>
+            </GlassyPanel>
           ))}
         </div>
 
         <div className="text-center">
-          <button className="bg-bvm-gold text-bvm-navy px-6 py-3 rounded-lg font-semibold 
-                           hover:bg-bvm-gold/90 transition-colors duration-300 shadow-lg">
-            Download Full Event Calendar (PDF)
-          </button>
+          <GlassyPanel className="inline-block" blur="light" opacity="medium">
+            <button className="bg-bvm-gold text-bvm-navy px-6 py-3 rounded-lg font-semibold 
+                             hover:bg-bvm-gold/90 transition-colors duration-300 shadow-lg">
+              Download Full Event Calendar (PDF)
+            </button>
+          </GlassyPanel>
         </div>
       </div>
     </section>

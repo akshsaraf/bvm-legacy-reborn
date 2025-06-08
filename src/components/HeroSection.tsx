@@ -1,17 +1,32 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { useParallax } from '@/hooks/useParallax';
 
 const HeroSection = () => {
+  const parallaxOffset = useParallax(0.3);
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center bg-mountain-gradient overflow-hidden">
-      {/* Background Image Overlay */}
+      {/* Parallax Background Image */}
       <div 
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 opacity-30 transition-transform duration-75"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=2000&auto=format&fit=crop')`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          backgroundPosition: 'center',
+          transform: `translateY(${parallaxOffset}px)`
+        }}
+      />
+      
+      {/* Parallax BVM Crest Background */}
+      <div 
+        className="absolute top-1/4 right-1/4 w-96 h-96 opacity-5 transition-transform duration-75"
+        style={{
+          backgroundImage: `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/><text x="50" y="55" text-anchor="middle" font-family="serif" font-size="20" fill="currentColor">BVM</text></svg>')`,
+          backgroundSize: 'contain',
+          backgroundRepeat: 'no-repeat',
+          transform: `translateY(${parallaxOffset * 0.5}px)`
         }}
       />
       

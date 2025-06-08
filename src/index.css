@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -139,6 +140,26 @@
   .animate-float {
     animation: float 3s ease-in-out infinite;
   }
+
+  .animate-fade-out {
+    animation: fadeOut 2s ease-out forwards;
+  }
+
+  /* Glassy Effect Utilities */
+  .glass-panel {
+    @apply backdrop-blur-md bg-background/20 border border-background/20 shadow-lg;
+  }
+
+  .glass-panel-strong {
+    @apply backdrop-blur-lg bg-background/30 border border-background/30 shadow-xl;
+  }
+
+  /* Parallax Optimization */
+  @media (prefers-reduced-motion: reduce) {
+    .parallax-element {
+      transform: none !important;
+    }
+  }
 }
 
 @keyframes fadeIn {
@@ -149,6 +170,15 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 
@@ -233,6 +263,11 @@
   .grid-cols-1 {
     @apply gap-4;
   }
+
+  /* Disable parallax on mobile for better performance */
+  .parallax-element {
+    transform: none !important;
+  }
 }
 
 /* Additional utility classes for the new sections */
@@ -296,4 +331,20 @@
   .grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 .relative.h-48 {
     height: 12rem;
   }
+}
+
+/* Video section specific styles */
+.video-overlay-entrance {
+  animation: fadeOut 2s ease-out 1s forwards;
+}
+
+/* Glassy panel hover effects */
+.glass-panel:hover {
+  @apply bg-background/30 border-background/30;
+  backdrop-filter: blur(16px);
+}
+
+/* Smooth parallax transitions */
+.parallax-smooth {
+  transition: transform 0.1s ease-out;
 }

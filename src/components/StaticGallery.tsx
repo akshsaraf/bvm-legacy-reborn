@@ -1,8 +1,9 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useParallax } from '@/hooks/useParallax';
+import GlassyPanel from '@/components/GlassyPanel';
 
 interface GalleryItem {
   id: number;
@@ -15,6 +16,7 @@ interface GalleryItem {
 const StaticGallery = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+  const parallaxOffset = useParallax(0.2);
 
   const categories = ['All', 'Academics', 'Sports & NCC', 'Cultural Events', 'Hostel Life'];
 
@@ -131,34 +133,49 @@ const StaticGallery = () => {
   };
 
   return (
-    <section id="gallery" className="section-padding bg-gradient-to-b from-background to-bvm-sky/10">
-      <div className="container-width">
-        <div className="text-center mb-12 animate-fade-in-up">
-          <h2 className="heading-secondary mb-4">Campus Life Gallery</h2>
-          <p className="text-elegant max-w-2xl mx-auto">
-            Explore the vibrant life at BVM through our comprehensive photo gallery showcasing academics, residential life, and co-curricular excellence
-          </p>
-        </div>
+    <section id="gallery" className="relative section-padding overflow-hidden">
+      {/* Parallax Background Texture */}
+      <div 
+        className="absolute inset-0 opacity-10"
+        style={{
+          backgroundImage: 'url(https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=1200&h=800&fit=crop&auto=format)',
+          backgroundSize: 'cover',
+          backgroundAttachment: 'fixed',
+          transform: `translateY(${parallaxOffset}px)`
+        }}
+      />
+      
+      <div className="container-width relative z-10">
+        <GlassyPanel className="p-8 mb-12" blur="medium" opacity="medium">
+          <div className="text-center animate-fade-in-up">
+            <h2 className="heading-secondary mb-4">Campus Life Gallery</h2>
+            <p className="text-elegant max-w-2xl mx-auto">
+              Explore the vibrant life at BVM through our comprehensive photo gallery showcasing academics, residential life, and co-curricular excellence
+            </p>
+          </div>
+        </GlassyPanel>
 
-        {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-          {categories.map((category) => (
-            <Button
-              key={category}
-              variant={activeFilter === category ? "default" : "outline"}
-              onClick={() => setActiveFilter(category)}
-              className={`
-                transition-all duration-300 hover:scale-105
-                ${activeFilter === category 
-                  ? 'bg-bvm-navy hover:bg-bvm-heritage shadow-lg' 
-                  : 'hover:bg-bvm-navy hover:text-background'
-                }
-              `}
-            >
-              {category}
-            </Button>
-          ))}
-        </div>
+        {/* Filter Buttons in Glassy Panel */}
+        <GlassyPanel className="p-6 mb-8" blur="light" opacity="low">
+          <div className="flex flex-wrap justify-center gap-2 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+            {categories.map((category) => (
+              <Button
+                key={category}
+                variant={activeFilter === category ? "default" : "outline"}
+                onClick={() => setActiveFilter(category)}
+                className={`
+                  transition-all duration-300 hover:scale-105
+                  ${activeFilter === category 
+                    ? 'bg-bvm-navy hover:bg-bvm-heritage shadow-lg' 
+                    : 'hover:bg-bvm-navy hover:text-background'
+                  }
+                `}
+              >
+                {category}
+              </Button>
+            ))}
+          </div>
+        </GlassyPanel>
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -166,7 +183,8 @@ const StaticGallery = () => {
             <Card 
               key={item.id}
               className="group cursor-pointer overflow-hidden hover:shadow-xl 
-                       transition-all duration-300 hover:-translate-y-2 animate-fade-in-up"
+                       transition-all duration-300 hover:-translate-y-2 animate-fade-in-up
+                       bg-background/80 backdrop-blur-sm border-background/20"
               style={{animationDelay: `${0.1 * index}s`}}
               onClick={() => openLightbox(index)}
             >

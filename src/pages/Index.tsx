@@ -1,8 +1,10 @@
+
 import React, { useEffect } from 'react';
 import DisclaimerBanner from '@/components/DisclaimerBanner';
 import EnhancedNavigation from '@/components/EnhancedNavigation';
 import LoadingScreen from '@/components/LoadingScreen';
 import HeroSection from '@/components/HeroSection';
+import LegacyVideoSection from '@/components/LegacyVideoSection';
 import AboutSection from '@/components/AboutSection';
 import WhyChooseBVMSection from '@/components/WhyChooseBVMSection';
 import AcademicsSection from '@/components/AcademicsSection';
@@ -46,6 +48,7 @@ const Index = () => {
       <EnhancedNavigation />
       <LikeCounter />
       <HeroSection />
+      <LegacyVideoSection />
       <AboutSection />
       <LiveStats />
       <WhyChooseBVMSection />
