@@ -7,6 +7,8 @@ interface GlassyPanelProps {
   className?: string;
   style?: React.CSSProperties;
   onClick?: () => void;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
   blur?: 'light' | 'medium' | 'strong';
   opacity?: 'low' | 'medium' | 'high';
 }
@@ -16,6 +18,8 @@ const GlassyPanel = ({
   className,
   style,
   onClick,
+  onMouseEnter,
+  onMouseLeave,
   blur = 'medium', 
   opacity = 'medium' 
 }: GlassyPanelProps) => {
@@ -42,6 +46,8 @@ const GlassyPanel = ({
       )}
       style={style}
       onClick={onClick}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       {children}
     </div>

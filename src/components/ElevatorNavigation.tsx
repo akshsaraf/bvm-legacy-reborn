@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Elevator } from 'lucide-react';
+import { Building } from 'lucide-react';
 import { Button } from './ui/button';
 
 const ElevatorNavigation = () => {
@@ -50,7 +50,7 @@ const ElevatorNavigation = () => {
       <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-40">
         <div className="bg-bvm-navy/90 backdrop-blur-sm rounded-lg p-3 shadow-xl border border-bvm-gold/20">
           <div className="flex items-center mb-3 text-bvm-gold">
-            <Elevator className="h-5 w-5 mr-2" />
+            <Building className="h-5 w-5 mr-2" />
             <span className="text-sm font-semibold">BVM Floors</span>
           </div>
           
