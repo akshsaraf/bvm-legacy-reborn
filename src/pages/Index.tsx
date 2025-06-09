@@ -23,6 +23,7 @@ import ArtWall from '@/components/ArtWall';
 import HandbookFlipbook from '@/components/HandbookFlipbook';
 import PoetryWall from '@/components/PoetryWall';
 import SatelliteOrbit from '@/components/SatelliteOrbit';
+import PrincipalDesk from '@/components/PrincipalDesk';
 
 const Index = () => {
   useEffect(() => {
@@ -53,6 +54,7 @@ const Index = () => {
       <DisclaimerBanner />
       <EnhancedNavigation />
       <ElevatorNavigation />
+      <PrincipalDesk />
       <LikeCounter />
       <HeroSection />
       <LegacyVideoSection />

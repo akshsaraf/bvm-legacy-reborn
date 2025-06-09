@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
+import PrincipalDesk from '@/components/PrincipalDesk';
 
 const AboutSection = () => {
   const timeline = [
@@ -64,8 +65,11 @@ const AboutSection = () => {
           </div>
         </div>
 
+        {/* Principal's Desk - Mobile Version */}
+        <PrincipalDesk />
+
         {/* Mission & Vision */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 mt-16">
           <Card className="border-bvm-navy/20">
             <CardContent className="p-8">
               <h4 className="font-playfair text-xl font-semibold text-bvm-navy mb-4">Our Mission</h4>

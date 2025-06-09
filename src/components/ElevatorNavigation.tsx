@@ -1,10 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
-import { Building } from 'lucide-react';
+import { Building, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from './ui/button';
 
 const ElevatorNavigation = () => {
   const [currentFloor, setCurrentFloor] = useState(1);
+  const [isExpanded, setIsExpanded] = useState(false);
   
   const floors = [
     { number: 1, label: 'Hero', section: 'hero' },
@@ -34,6 +35,18 @@ const ElevatorNavigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element;
+      if (isExpanded && !target.closest('.elevator-panel')) {
+        setIsExpanded(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [isExpanded]);
+
   const goToFloor = (floorNumber: number) => {
     const floor = floors.find(f => f.number === floorNumber);
     if (floor) {
@@ -46,31 +59,56 @@ const ElevatorNavigation = () => {
 
   return (
     <>
-      {/* Elevator Panel */}
-      <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-40">
-        <div className="bg-bvm-navy/90 backdrop-blur-sm rounded-lg p-3 shadow-xl border border-bvm-gold/20">
-          <div className="flex items-center mb-3 text-bvm-gold">
-            <Building className="h-5 w-5 mr-2" />
-            <span className="text-sm font-semibold">BVM Floors</span>
-          </div>
-          
-          <div className="space-y-2">
-            {floors.map((floor) => (
-              <Button
-                key={floor.number}
-                onClick={() => goToFloor(floor.number)}
-                className={`w-full text-left justify-start h-8 text-xs transition-all duration-300 ${
-                  currentFloor === floor.number
-                    ? 'bg-bvm-gold text-bvm-navy shadow-lg scale-105'
-                    : 'bg-transparent text-background border border-bvm-gold/30 hover:bg-bvm-gold/20'
-                }`}
+      {/* Collapsible Elevator Panel */}
+      <div className="fixed right-0 top-1/2 transform -translate-y-1/2 z-40 elevator-panel">
+        {/* Collapsed State - Floating Button */}
+        {!isExpanded && (
+          <button
+            onClick={() => setIsExpanded(true)}
+            className="bg-bvm-navy/90 backdrop-blur-sm text-bvm-gold rounded-l-lg p-3 shadow-xl border border-bvm-gold/20 hover:bg-bvm-navy transition-all duration-300 group"
+            title="Jump to Section"
+          >
+            <div className="flex items-center">
+              <Building className="h-5 w-5" />
+              <ChevronLeft className="h-4 w-4 ml-1 group-hover:translate-x-[-2px] transition-transform" />
+            </div>
+          </button>
+        )}
+
+        {/* Expanded State - Full Panel */}
+        {isExpanded && (
+          <div className="bg-bvm-navy/90 backdrop-blur-sm rounded-l-lg p-3 shadow-xl border border-bvm-gold/20 animate-slide-in-right">
+            <div className="flex items-center justify-between mb-3 text-bvm-gold">
+              <div className="flex items-center">
+                <Building className="h-5 w-5 mr-2" />
+                <span className="text-sm font-semibold">BVM Floors</span>
+              </div>
+              <button
+                onClick={() => setIsExpanded(false)}
+                className="text-bvm-gold hover:text-background transition-colors"
               >
-                <span className="w-6 text-center font-bold">{floor.number}</span>
-                <span className="ml-2">{floor.label}</span>
-              </Button>
-            ))}
+                <ChevronRight className="h-4 w-4" />
+              </button>
+            </div>
+            
+            <div className="space-y-2">
+              {floors.map((floor) => (
+                <Button
+                  key={floor.number}
+                  onClick={() => goToFloor(floor.number)}
+                  className={`w-full text-left justify-start h-8 text-xs transition-all duration-300 ${
+                    currentFloor === floor.number
+                      ? 'bg-bvm-gold text-bvm-navy shadow-lg scale-105'
+                      : 'bg-transparent text-background border border-bvm-gold/30 hover:bg-bvm-gold/20'
+                  }`}
+                >
+                  <span className="w-6 text-center font-bold">{floor.number}</span>
+                  <span className="ml-2">{floor.label}</span>
+                </Button>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       {/* Current Floor Indicator */}
