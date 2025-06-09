@@ -1,24 +1,26 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Heart, Pin } from 'lucide-react';
 import GlassyPanel from './GlassyPanel';
 
 const PinboardMemories = () => {
-  const memories = [
+  const [memories, setMemories] = useState([
     {
       id: 1,
       type: 'photo',
       content: 'https://images.unsplash.com/photo-1473177104440-ffee2f376098?w=300&h=200&fit=crop',
       caption: 'Morning assembly in the hills',
       rotation: 'rotate-2',
-      likes: 24
+      likes: 24,
+      userLiked: false
     },
     {
       id: 2,
       type: 'note',
       content: '"Best friends made in the hostel corridors" - Class XII',
       rotation: '-rotate-1',
-      likes: 18
+      likes: 18,
+      userLiked: false
     },
     {
       id: 3,
@@ -26,14 +28,16 @@ const PinboardMemories = () => {
       content: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=300&h=200&fit=crop',
       caption: 'Inter-house cricket finals',
       rotation: 'rotate-1',
-      likes: 31
+      likes: 31,
+      userLiked: false
     },
     {
       id: 4,
       type: 'doodle',
       content: 'BVM Forever! ⭐',
       rotation: '-rotate-2',
-      likes: 12
+      likes: 12,
+      userLiked: false
     },
     {
       id: 5,
@@ -41,9 +45,25 @@ const PinboardMemories = () => {
       content: 'https://images.unsplash.com/photo-1466442929976-97f336a657be?w=300&h=200&fit=crop',
       caption: 'Annual cultural fest preparations',
       rotation: 'rotate-3',
-      likes: 27
+      likes: 27,
+      userLiked: false
     }
-  ];
+  ]);
+
+  const handleLike = (memoryId: number) => {
+    setMemories(prevMemories => 
+      prevMemories.map(memory => {
+        if (memory.id === memoryId) {
+          return {
+            ...memory,
+            likes: memory.userLiked ? memory.likes - 1 : memory.likes + 1,
+            userLiked: !memory.userLiked
+          };
+        }
+        return memory;
+      })
+    );
+  };
 
   return (
     <section className="section-padding bg-amber-50 relative overflow-hidden">
@@ -92,9 +112,20 @@ const PinboardMemories = () => {
                 
                 {/* Like button */}
                 <div className="flex items-center justify-between mt-3 pt-2 border-t border-amber-200">
-                  <button className="flex items-center space-x-1 text-red-500 hover:text-red-600 transition-colors">
-                    <Heart className="h-4 w-4" />
-                    <span className="text-sm">{memory.likes}</span>
+                  <button 
+                    onClick={() => handleLike(memory.id)}
+                    className={`flex items-center space-x-1 transition-all duration-200 hover:scale-110 ${
+                      memory.userLiked 
+                        ? 'text-red-500' 
+                        : 'text-gray-400 hover:text-red-500'
+                    }`}
+                  >
+                    <Heart 
+                      className={`h-4 w-4 transition-colors ${
+                        memory.userLiked ? 'fill-current' : ''
+                      }`} 
+                    />
+                    <span className="text-sm font-medium">{memory.likes}</span>
                   </button>
                   <div className="w-4 h-4 bg-yellow-400 rounded-full opacity-60" />
                 </div>
