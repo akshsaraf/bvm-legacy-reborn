@@ -18,7 +18,6 @@ import RecognitionWall from '@/components/RecognitionWall';
 import BVMCultureCards from '@/components/BVMCultureCards';
 import LiveEngagement from '@/components/LiveEngagement';
 import PinboardMemories from '@/components/PinboardMemories';
-import ElevatorNavigation from '@/components/ElevatorNavigation';
 import ArtWall from '@/components/ArtWall';
 import HandbookFlipbook from '@/components/HandbookFlipbook';
 import PoetryWall from '@/components/PoetryWall';
@@ -53,7 +52,6 @@ const Index = () => {
       <LoadingScreen />
       <DisclaimerBanner />
       <EnhancedNavigation />
-      <ElevatorNavigation />
       <PrincipalDesk />
       <LikeCounter />
       <HeroSection />

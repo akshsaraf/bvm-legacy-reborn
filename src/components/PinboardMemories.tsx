@@ -110,24 +110,44 @@ const PinboardMemories = () => {
                   </div>
                 )}
                 
-                {/* Like button */}
+                {/* Enhanced Like button */}
                 <div className="flex items-center justify-between mt-3 pt-2 border-t border-amber-200">
                   <button 
                     onClick={() => handleLike(memory.id)}
-                    className={`flex items-center space-x-1 transition-all duration-200 hover:scale-110 ${
+                    className={`relative flex items-center space-x-2 px-3 py-1.5 rounded-full transition-all duration-300 transform hover:scale-110 active:scale-95 group ${
                       memory.userLiked 
-                        ? 'text-red-500' 
-                        : 'text-gray-400 hover:text-red-500'
+                        ? 'bg-red-50 text-red-600 shadow-lg' 
+                        : 'bg-gray-50 text-gray-500 hover:bg-red-50 hover:text-red-500'
                     }`}
                   >
+                    {/* Animated heart with pulse effect */}
                     <Heart 
-                      className={`h-4 w-4 transition-colors ${
-                        memory.userLiked ? 'fill-current' : ''
+                      className={`h-5 w-5 transition-all duration-300 ${
+                        memory.userLiked 
+                          ? 'fill-current animate-pulse text-red-500' 
+                          : 'group-hover:scale-110'
                       }`} 
                     />
-                    <span className="text-sm font-medium">{memory.likes}</span>
+                    
+                    {/* Like count with smooth number transition */}
+                    <span className={`text-sm font-bold transition-all duration-200 ${
+                      memory.userLiked ? 'text-red-600' : 'text-gray-600'
+                    }`}>
+                      {memory.likes}
+                    </span>
+                    
+                    {/* Floating hearts animation on like */}
+                    {memory.userLiked && (
+                      <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 pointer-events-none">
+                        <div className="animate-float opacity-70">
+                          <Heart className="h-3 w-3 text-red-400 fill-current" />
+                        </div>
+                      </div>
+                    )}
                   </button>
-                  <div className="w-4 h-4 bg-yellow-400 rounded-full opacity-60" />
+                  
+                  {/* Decorative thumb tack */}
+                  <div className="w-4 h-4 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full opacity-80 shadow-sm" />
                 </div>
               </GlassyPanel>
               
