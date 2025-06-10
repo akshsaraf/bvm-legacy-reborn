@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Heart, Pin } from 'lucide-react';
 import GlassyPanel from './GlassyPanel';
@@ -62,7 +61,7 @@ const PinboardMemories = () => {
       userLiked: false,
       tapeStyle: 'tape-3'
     }
-  ];
+  ]);
 
   const handleLike = (memoryId: number) => {
     setMemories(prevMemories => 
