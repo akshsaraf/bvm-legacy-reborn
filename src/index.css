@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -100,7 +101,7 @@
 
 @layer components {
   .section-padding {
-    @apply py-16 px-4 md:px-6 lg:px-8;
+    @apply py-20 px-4 md:px-6 lg:px-8;
   }
 
   .container-width {
@@ -112,11 +113,11 @@
   }
 
   .heading-secondary {
-    @apply font-playfair text-3xl md:text-4xl font-semibold text-bvm-navy;
+    @apply font-playfair text-3xl md:text-4xl lg:text-5xl font-semibold text-bvm-navy;
   }
 
   .text-elegant {
-    @apply text-lg leading-relaxed text-bvm-heritage;
+    @apply text-lg md:text-xl leading-relaxed text-bvm-heritage;
   }
 
   /* Handwriting font for pinboard */
@@ -162,6 +163,55 @@
   @media (prefers-reduced-motion: reduce) {
     .parallax-element {
       transform: none !important;
+    }
+  }
+
+  /* Mobile Optimizations */
+  @media (max-width: 768px) {
+    .section-padding {
+      @apply py-12 px-4;
+    }
+    
+    .heading-primary {
+      @apply text-3xl md:text-4xl;
+    }
+    
+    .heading-secondary {
+      @apply text-2xl md:text-3xl;
+    }
+
+    .text-elegant {
+      @apply text-base md:text-lg;
+    }
+    
+    .grid-cols-1 {
+      @apply gap-4;
+    }
+
+    /* Disable parallax on mobile for better performance */
+    .parallax-element {
+      transform: none !important;
+    }
+
+    /* Mobile-specific improvements */
+    .container-width {
+      @apply px-4;
+    }
+
+    /* Better spacing for mobile cards */
+    .grid.gap-6 {
+      @apply gap-4;
+    }
+
+    .grid.gap-8 {
+      @apply gap-6;
+    }
+  }
+
+  /* Tablet optimizations */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .section-padding {
+      @apply py-16 px-6;
     }
   }
 }
@@ -249,31 +299,6 @@
   }
 }
 
-/* Responsive improvements */
-@media (max-width: 768px) {
-  .section-padding {
-    @apply py-12 px-4;
-  }
-  
-  .heading-primary {
-    @apply text-3xl md:text-4xl;
-  }
-  
-  .heading-secondary {
-    @apply text-2xl md:text-3xl;
-  }
-  
-  /* Mobile optimizations for new sections */
-  .grid-cols-1 {
-    @apply gap-4;
-  }
-
-  /* Disable parallax on mobile for better performance */
-  .parallax-element {
-    transform: none !important;
-  }
-}
-
 /* Additional utility classes for the new sections */
 .animate-count-up {
   animation: countUp 0.6s ease-out forwards;
@@ -325,18 +350,6 @@
   animation: slideInUp 0.6s ease-out forwards;
 }
 
-/* Mobile optimizations for card flips */
-@media (max-width: 768px) {
-  .perspective-1000 {
-    perspective: 800px;
-  }
-  
-  /* Make cards slightly smaller on mobile for better touch interaction */
-  .grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 .relative.h-48 {
-    height: 12rem;
-  }
-}
-
 /* Video section specific styles */
 .video-overlay-entrance {
   animation: fadeOut 2s ease-out 1s forwards;
@@ -351,4 +364,65 @@
 /* Smooth parallax transitions */
 .parallax-smooth {
   transition: transform 0.1s ease-out;
+}
+
+/* Improved accessibility and focus states */
+.btn-focus {
+  @apply focus:outline-none focus:ring-2 focus:ring-bvm-gold focus:ring-offset-2;
+}
+
+/* Better section transitions */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Improved typography scale */
+.text-display {
+  @apply text-5xl md:text-6xl lg:text-7xl;
+}
+
+.text-headline {
+  @apply text-3xl md:text-4xl lg:text-5xl;
+}
+
+.text-title {
+  @apply text-xl md:text-2xl lg:text-3xl;
+}
+
+.text-body {
+  @apply text-base md:text-lg;
+}
+
+.text-caption {
+  @apply text-sm md:text-base;
+}
+
+/* Loading states */
+.loading-skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: black;
+    background: white;
+  }
 }
