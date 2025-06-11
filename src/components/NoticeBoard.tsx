@@ -182,23 +182,6 @@ const NoticeBoard = () => {
         <div className="absolute bottom-32 left-20 w-4 h-4 bg-yellow-400 rounded-full opacity-40" />
         <div className="absolute bottom-20 right-12 w-2 h-2 bg-green-400 rounded-full opacity-60" />
       </div>
-
-      <style jsx>{`
-        .custom-scrollbar::-webkit-scrollbar {
-          width: 8px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-          background: #f1f1f1;
-          border-radius: 4px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: #888;
-          border-radius: 4px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: #555;
-        }
-      `}</style>
     </section>
   );
 };
