@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -462,4 +461,17 @@ section {
 
 .btn-navy {
   @apply bg-bvm-navy text-bvm-white hover:bg-bvm-royal transition-colors;
+}
+
+/* Mobile optimizations for hero animations */
+@media (max-width: 768px) {
+  .animate-glow {
+    animation: none;
+    box-shadow: 0 0 10px hsl(var(--bvm-gold));
+  }
+  
+  /* Reduce motion on mobile for performance */
+  .parallax-element {
+    transform: none !important;
+  }
 }
