@@ -185,23 +185,19 @@
   /* Mobile Optimizations */
   @media (max-width: 768px) {
     .section-padding {
-      @apply py-12 px-4;
+      padding: 3rem 1rem;
     }
     
     .heading-primary {
-      @apply text-3xl md:text-4xl;
+      font-size: 1.875rem;
     }
     
     .heading-secondary {
-      @apply text-2xl md:text-3xl;
+      font-size: 1.5rem;
     }
 
     .text-elegant {
-      @apply text-base md:text-lg;
-    }
-    
-    .grid-cols-1 {
-      @apply gap-4;
+      font-size: 1rem;
     }
 
     /* Disable parallax on mobile for better performance */
@@ -211,23 +207,15 @@
 
     /* Mobile-specific improvements */
     .container-width {
-      @apply px-4;
-    }
-
-    /* Better spacing for mobile cards */
-    .grid.gap-6 {
-      @apply gap-4;
-    }
-
-    .grid.gap-8 {
-      @apply gap-6;
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
   }
 
   /* Tablet optimizations */
   @media (min-width: 768px) and (max-width: 1024px) {
     .section-padding {
-      @apply py-16 px-6;
+      padding: 4rem 1.5rem;
     }
   }
 }
