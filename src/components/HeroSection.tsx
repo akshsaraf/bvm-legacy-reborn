@@ -144,15 +144,6 @@ const HeroSection = () => {
           <div className="w-1 h-3 bg-bvm-white rounded-full mt-2"></div>
         </div>
       </div>
-
-      {/* Mobile-optimized styles */}
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .parallax-element {
-            transform: none !important;
-          }
-        }
-      `}</style>
     </section>
   );
 };
