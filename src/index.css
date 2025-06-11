@@ -3,85 +3,88 @@
 @tailwind components;
 @tailwind utilities;
 
-/* BVM Design System - Mountain Heritage Theme */
+/* BVM Design System - Modern Legacy Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 100%; /* White #FFFFFF */
+    --foreground: 210 100% 21%; /* Navy Blue #002F6C */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%; /* White #FFFFFF */
+    --card-foreground: 210 100% 21%; /* Navy Blue #002F6C */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%; /* White #FFFFFF */
+    --popover-foreground: 210 100% 21%; /* Navy Blue #002F6C */
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 210 100% 21%; /* Navy Blue #002F6C */
+    --primary-foreground: 0 0% 100%; /* White #FFFFFF */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 213 91% 89%; /* Soft Sky Blue #CDE5F9 */
+    --secondary-foreground: 210 100% 21%; /* Navy Blue #002F6C */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 213 91% 89%; /* Soft Sky Blue #CDE5F9 */
+    --muted-foreground: 210 100% 21%; /* Navy Blue #002F6C */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 45 95% 68%; /* Golden Yellow #F5C542 */
+    --accent-foreground: 210 100% 21%; /* Navy Blue #002F6C */
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 0% 88%; /* Light Grey #E0E0E0 */
+    --input: 0 0% 88%; /* Light Grey #E0E0E0 */
+    --ring: 45 95% 68%; /* Golden Yellow #F5C542 */
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-foreground: 210 100% 21%;
+    --sidebar-primary: 210 100% 21%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 213 91% 89%;
+    --sidebar-accent-foreground: 210 100% 21%;
+    --sidebar-border: 0 0% 88%;
+    --sidebar-ring: 45 95% 68%;
 
-    /* BVM Color Palette */
-    --bvm-navy: 221 83% 15%;
-    --bvm-gold: 43 96% 56%;
-    --bvm-mountain: 211 13% 65%;
-    --bvm-sky: 201 79% 87%;
-    --bvm-heritage: 221 39% 30%;
+    /* BVM Color Palette - Updated */
+    --bvm-navy: 210 100% 21%; /* Navy Blue #002F6C */
+    --bvm-gold: 45 95% 68%; /* Golden Yellow #F5C542 */
+    --bvm-amber: 45 100% 65%; /* Amber #FFC107 */
+    --bvm-royal: 227 82% 51%; /* Royal Blue #254EDB */
+    --bvm-sky: 213 91% 89%; /* Soft Sky Blue #CDE5F9 */
+    --bvm-cream: 45 100% 94%; /* Light Cream #FFF4E0 */
+    --bvm-grey: 0 0% 88%; /* Light Grey #E0E0E0 */
+    --bvm-white: 0 0% 100%; /* White #FFFFFF */
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --background: 210 100% 21%;
+    --foreground: 0 0% 100%;
+    --card: 210 100% 21%;
+    --card-foreground: 0 0% 100%;
+    --popover: 210 100% 21%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 210 100% 21%;
+    --secondary: 227 82% 51%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 227 82% 51%;
+    --muted-foreground: 0 0% 100%;
+    --accent: 45 95% 68%;
+    --accent-foreground: 210 100% 21%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 227 82% 51%;
+    --input: 227 82% 51%;
+    --ring: 45 95% 68%;
+    --sidebar-background: 210 100% 21%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 45 95% 68%;
+    --sidebar-primary-foreground: 210 100% 21%;
+    --sidebar-accent: 227 82% 51%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 227 82% 51%;
+    --sidebar-ring: 45 95% 68%;
   }
 }
 
@@ -117,7 +120,7 @@
   }
 
   .text-elegant {
-    @apply text-lg md:text-xl leading-relaxed text-bvm-heritage;
+    @apply text-lg md:text-xl leading-relaxed text-bvm-navy;
   }
 
   /* Handwriting font for pinboard */
@@ -130,15 +133,15 @@
     width: 8px;
   }
   .custom-scrollbar::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: hsl(var(--bvm-grey));
     border-radius: 4px;
   }
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #888;
+    background: hsl(var(--bvm-navy));
     border-radius: 4px;
   }
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: hsl(var(--bvm-royal));
   }
 
   /* Enhanced Animation Classes */
@@ -166,13 +169,13 @@
     animation: fadeOut 2s ease-out forwards;
   }
 
-  /* Glassy Effect Utilities */
+  /* Glassy Effect Utilities - Updated Colors */
   .glass-panel {
-    @apply backdrop-blur-md bg-background/20 border border-background/20 shadow-lg;
+    @apply backdrop-blur-md bg-bvm-white/80 border border-bvm-grey/50 shadow-lg;
   }
 
   .glass-panel-strong {
-    @apply backdrop-blur-lg bg-background/30 border border-background/30 shadow-xl;
+    @apply backdrop-blur-lg bg-bvm-white/90 border border-bvm-grey/60 shadow-xl;
   }
 
   /* Parallax Optimization */
@@ -359,9 +362,9 @@
   animation: fadeOut 2s ease-out 1s forwards;
 }
 
-/* Glassy panel hover effects */
+/* Glassy panel hover effects - Updated Colors */
 .glass-panel:hover {
-  @apply bg-background/30 border-background/30;
+  @apply bg-bvm-white/95 border-bvm-gold/50;
   backdrop-filter: blur(16px);
 }
 
@@ -370,7 +373,7 @@
   transition: transform 0.1s ease-out;
 }
 
-/* Improved accessibility and focus states */
+/* Improved accessibility and focus states - Updated Colors */
 .btn-focus {
   @apply focus:outline-none focus:ring-2 focus:ring-bvm-gold focus:ring-offset-2;
 }
@@ -401,9 +404,9 @@ section {
   @apply text-sm md:text-base;
 }
 
-/* Loading states */
+/* Loading states - Updated Colors */
 .loading-skeleton {
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background: linear-gradient(90deg, hsl(var(--bvm-grey)) 25%, hsl(var(--bvm-sky)) 50%, hsl(var(--bvm-grey)) 75%);
   background-size: 200% 100%;
   animation: loading 1.5s infinite;
 }
@@ -429,4 +432,34 @@ section {
     color: black;
     background: white;
   }
+}
+
+/* BVM Section Background Classes */
+.bg-navy-section {
+  @apply bg-bvm-navy text-bvm-white;
+}
+
+.bg-sky-section {
+  @apply bg-bvm-sky text-bvm-navy;
+}
+
+.bg-cream-section {
+  @apply bg-bvm-cream text-bvm-navy;
+}
+
+.bg-white-section {
+  @apply bg-bvm-white text-bvm-navy;
+}
+
+/* BVM Button Styles */
+.btn-gold {
+  @apply bg-bvm-gold text-bvm-navy hover:bg-bvm-amber transition-colors;
+}
+
+.btn-royal {
+  @apply bg-bvm-royal text-bvm-white hover:bg-bvm-navy transition-colors;
+}
+
+.btn-navy {
+  @apply bg-bvm-navy text-bvm-white hover:bg-bvm-royal transition-colors;
 }

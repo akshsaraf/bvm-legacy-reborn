@@ -64,16 +64,21 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				bvm: {
-					navy: 'hsl(var(--bvm-navy))',
-					gold: 'hsl(var(--bvm-gold))',
-					mountain: 'hsl(var(--bvm-mountain))',
-					sky: 'hsl(var(--bvm-sky))',
-					heritage: 'hsl(var(--bvm-heritage))'
+					navy: 'hsl(var(--bvm-navy))', /* #002F6C */
+					gold: 'hsl(var(--bvm-gold))', /* #F5C542 */
+					amber: 'hsl(var(--bvm-amber))', /* #FFC107 */
+					royal: 'hsl(var(--bvm-royal))', /* #254EDB */
+					sky: 'hsl(var(--bvm-sky))', /* #CDE5F9 */
+					cream: 'hsl(var(--bvm-cream))', /* #FFF4E0 */
+					grey: 'hsl(var(--bvm-grey))', /* #E0E0E0 */
+					white: 'hsl(var(--bvm-white))' /* #FFFFFF */
 				}
 			},
 			backgroundImage: {
-				'mountain-gradient': 'linear-gradient(135deg, hsl(var(--bvm-sky)) 0%, hsl(var(--bvm-mountain)) 100%)',
-				'heritage-gradient': 'linear-gradient(135deg, hsl(var(--bvm-navy)) 0%, hsl(var(--bvm-heritage)) 100%)'
+				'navy-gradient': 'linear-gradient(135deg, hsl(var(--bvm-navy)) 0%, hsl(var(--bvm-royal)) 100%)',
+				'gold-gradient': 'linear-gradient(135deg, hsl(var(--bvm-gold)) 0%, hsl(var(--bvm-amber)) 100%)',
+				'sky-gradient': 'linear-gradient(135deg, hsl(var(--bvm-sky)) 0%, hsl(var(--bvm-white)) 100%)',
+				'cream-gradient': 'linear-gradient(135deg, hsl(var(--bvm-cream)) 0%, hsl(var(--bvm-white)) 100%)'
 			},
 			fontFamily: {
 				'playfair': ['Playfair Display', 'serif'],
