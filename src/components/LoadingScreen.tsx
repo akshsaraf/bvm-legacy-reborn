@@ -18,11 +18,14 @@ const LoadingScreen = () => {
   return (
     <div className="fixed inset-0 bg-heritage-gradient z-[100] flex items-center justify-center">
       <div className="text-center animate-fade-in">
-        {/* BVM Crest */}
+        {/* BVM Logo */}
         <div className="mb-8 animate-float">
-          <div className="w-32 h-32 mx-auto bg-background rounded-full flex items-center justify-center 
-                        shadow-2xl animate-glow">
-            <span className="font-playfair font-bold text-4xl text-bvm-navy">BVM</span>
+          <div className="w-32 h-32 mx-auto bg-background/20 backdrop-blur-sm rounded-full flex items-center justify-center shadow-2xl border border-background/30">
+            <img 
+              src="/lovable-uploads/f6e2ab58-4e8d-4de4-805d-baa1a97d46f2.png" 
+              alt="BVM Logo" 
+              className="w-20 h-20 object-contain"
+            />
           </div>
         </div>
 
