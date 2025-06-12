@@ -2,12 +2,14 @@
 import React, { useState, useEffect } from 'react';
 import { Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 const LikeCounter = () => {
   const [likes, setLikes] = useState(0);
   const [hasLiked, setHasLiked] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
 
   const websiteName = "bvm-legacy-reborn.lovable.app";
   const apiBaseUrl = "https://timesofindia.indiatimes.com/student-ai-masterclass/api/like";
@@ -19,6 +21,10 @@ const LikeCounter = () => {
 
     // Fetch current like count
     fetchLikes();
+
+    // Trigger fade-in animation after component mounts
+    const timer = setTimeout(() => setIsVisible(true), 500);
+    return () => clearTimeout(timer);
   }, []);
 
   const fetchLikes = async () => {
@@ -99,46 +105,66 @@ const LikeCounter = () => {
   };
 
   return (
-    <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-40">
-      <div className="bg-card rounded-full p-4 shadow-lg border animate-float">
-        <div className="text-center mb-2">
-          <span className="text-2xl font-bold text-bvm-gold block">{isLoading ? '...' : likes}</span>
-          <span className="text-xs text-bvm-heritage">likes</span>
-        </div>
-        
-        <Button
-          onClick={handleLike}
-          disabled={hasLiked || isLoading}
-          className={`
-            relative overflow-hidden group w-12 h-12 rounded-full p-0
-            ${hasLiked 
-              ? 'bg-bvm-gold hover:bg-bvm-gold cursor-default' 
-              : 'bg-bvm-navy hover:bg-bvm-heritage hover:shadow-lg hover:shadow-bvm-navy/20'
-            }
-            transition-all duration-300
-            ${isAnimating ? 'animate-pulse scale-110' : ''}
-          `}
-        >
-          <Heart 
-            className={`h-6 w-6 transition-all duration-300 ${
-              hasLiked ? 'fill-current text-bvm-navy' : 'group-hover:scale-110'
-            } ${isAnimating ? 'animate-bounce' : ''}`} 
-          />
+    <TooltipProvider>
+      <div className={`
+        fixed right-6 top-1/2 transform -translate-y-1/2 z-40
+        md:right-6 md:top-1/2 md:-translate-y-1/2
+        max-md:bottom-6 max-md:right-4 max-md:top-auto max-md:transform-none
+        transition-all duration-500 ease-out
+        ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}
+      `}>
+        <div className="frosted-glass-pill p-3 shadow-lg border border-white/20 backdrop-blur-md bg-white/10">
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                onClick={handleLike}
+                disabled={hasLiked || isLoading}
+                className={`
+                  group flex items-center gap-3 px-4 py-2 rounded-full
+                  ${hasLiked 
+                    ? 'bg-amber-100/20 hover:bg-amber-100/20 cursor-default' 
+                    : 'bg-white/10 hover:bg-white/20 hover:shadow-lg hover:shadow-amber-500/20'
+                  }
+                  transition-all duration-300 border-0
+                  ${isAnimating ? 'animate-pulse scale-105' : ''}
+                  hover:scale-105
+                `}
+              >
+                <Heart 
+                  className={`h-5 w-5 transition-all duration-300 ${
+                    hasLiked 
+                      ? 'fill-amber-400 text-amber-400' 
+                      : 'text-amber-400 group-hover:fill-amber-400 group-hover:scale-110'
+                  } ${isAnimating ? 'animate-bounce' : ''}`} 
+                />
+                
+                <span className={`
+                  font-bold text-lg transition-colors duration-300
+                  ${hasLiked ? 'text-bvm-navy' : 'text-white group-hover:text-bvm-navy'}
+                `}>
+                  {isLoading ? '...' : likes}
+                </span>
+                
+                {!hasLiked && (
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent 
+                              transform -skew-x-12 -translate-x-full group-hover:translate-x-full 
+                              transition-transform duration-700 rounded-full" />
+                )}
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent side="left" className="bg-bvm-navy text-white border-bvm-gold">
+              <p>{hasLiked ? "Thanks for your support!" : "Like this project!"}</p>
+            </TooltipContent>
+          </Tooltip>
           
-          {!hasLiked && (
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent 
-                          transform -skew-x-12 -translate-x-full group-hover:translate-x-full 
-                          transition-transform duration-700 rounded-full" />
+          {hasLiked && (
+            <p className="text-xs text-center text-white/80 mt-1 animate-fade-in">
+              ❤️ Thank you!
+            </p>
           )}
-        </Button>
-        
-        {hasLiked && (
-          <p className="text-xs text-center text-bvm-heritage mt-2 animate-fade-in">
-            Thank you!
-          </p>
-        )}
+        </div>
       </div>
-    </div>
+    </TooltipProvider>
   );
 };
 
