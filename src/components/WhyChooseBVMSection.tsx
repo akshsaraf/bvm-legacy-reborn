@@ -60,7 +60,7 @@ const WhyChooseBVMSection = () => {
               <div className="text-3xl font-bold text-bvm-gold mb-2">Classes IV-XII</div>
               <div className="text-sm opacity-90">Grade Levels</div>
             </div>
-            <div>
+            <div className="mx-[100px]">
               <div className="text-3xl font-bold text-bvm-gold mb-2">~800</div>
               <div className="text-sm opacity-90">Students</div>
             </div>
