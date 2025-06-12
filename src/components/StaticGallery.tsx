@@ -1,7 +1,8 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, MapPin } from 'lucide-react';
 import { useParallax } from '@/hooks/useParallax';
 import GlassyPanel from '@/components/GlassyPanel';
 
@@ -11,6 +12,7 @@ interface GalleryItem {
   category: string;
   imageUrl: string;
   description: string;
+  location?: string;
 }
 
 const StaticGallery = () => {
@@ -18,92 +20,104 @@ const StaticGallery = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
   const parallaxOffset = useParallax(0.2);
 
-  const categories = ['All', 'Academics', 'Sports & NCC', 'Cultural Events', 'Hostel Life'];
+  const categories = ['All', 'Hostel', 'Classrooms', 'Events', 'Outdoors', 'Traditions'];
 
   const galleryItems: GalleryItem[] = [
     {
       id: 1,
-      title: 'Modern Science Laboratory',
-      category: 'Academics',
-      imageUrl: 'https://images.unsplash.com/photo-1562813733-b31f71025d54?w=800&h=600&fit=crop&auto=format',
-      description: 'State-of-the-art science facilities for hands-on learning'
+      title: 'Daily Morning Assembly',
+      category: 'Traditions',
+      imageUrl: 'https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=800&h=600&fit=crop&auto=format',
+      description: 'Daily morning assembly at the open-air parade ground with mountain backdrop',
+      location: 'Parade Ground'
     },
     {
       id: 2,
-      title: 'Cricket Championship',
-      category: 'Sports & NCC',
-      imageUrl: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=800&h=600&fit=crop&auto=format',
-      description: 'Annual inter-house cricket tournament at 7,800 ft altitude'
+      title: 'Chapel Prayer Service',
+      category: 'Traditions',
+      imageUrl: 'https://images.unsplash.com/photo-1473177104440-ffee2f376098?w=800&h=600&fit=crop&auto=format',
+      description: 'Evening prayer service at the school chapel, fostering spiritual growth',
+      location: 'Chapel'
     },
     {
       id: 3,
-      title: 'Cultural Festival Performance',
-      category: 'Cultural Events',
-      imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop&auto=format',
-      description: 'Students showcasing traditional Indian dance and music'
+      title: 'Modern Science Laboratory',
+      category: 'Classrooms',
+      imageUrl: 'https://images.unsplash.com/photo-1562813733-b31f71025d54?w=800&h=600&fit=crop&auto=format',
+      description: 'State-of-the-art physics laboratory for hands-on learning and experiments',
+      location: 'Science Block'
     },
     {
       id: 4,
-      title: 'Hostel Common Room',
-      category: 'Hostel Life',
+      title: 'Hostel Room Life',
+      category: 'Hostel',
       imageUrl: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&h=600&fit=crop&auto=format',
-      description: 'Comfortable spaces for students to relax and bond'
+      description: 'Comfortable hostel rooms with study areas and personal storage spaces',
+      location: 'Residential Blocks'
     },
     {
       id: 5,
-      title: 'Founder\'s Day Celebration',
-      category: 'Cultural Events',
-      imageUrl: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&auto=format',
-      description: 'Annual celebration honoring G.D. Birla\'s legacy'
+      title: 'Library Study Session',
+      category: 'Classrooms',
+      imageUrl: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&h=600&fit=crop&auto=format',
+      description: 'Class 10 students during supervised study hour in the main library',
+      location: 'Central Library'
     },
     {
       id: 6,
-      title: 'High-Altitude Swimming Pool',
-      category: 'Sports & NCC',
-      imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop&auto=format',
-      description: 'One of the world\'s highest altitude swimming facilities'
+      title: 'Evening Dining Hall',
+      category: 'Hostel',
+      imageUrl: 'https://images.unsplash.com/photo-1567521464027-f127ff144326?w=800&h=600&fit=crop&auto=format',
+      description: 'Students enjoying nutritious meals together with Sanskrit prayers before dining',
+      location: 'Main Dining Hall'
     },
     {
       id: 7,
-      title: 'Digital Classroom',
-      category: 'Academics',
-      imageUrl: 'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=800&h=600&fit=crop&auto=format',
-      description: 'Technology-enabled learning environments'
+      title: 'Cricket Practice Session',
+      category: 'Outdoors',
+      imageUrl: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=800&h=600&fit=crop&auto=format',
+      description: 'Inter-house cricket practice at one of the world\'s highest altitude grounds',
+      location: 'Sports Complex'
     },
     {
       id: 8,
-      title: 'Dining Hall Community',
-      category: 'Hostel Life',
-      imageUrl: 'https://images.unsplash.com/photo-1567521464027-f127ff144326?w=800&h=600&fit=crop&auto=format',
-      description: 'Nutritious meals with Sanskrit prayers before dining'
+      title: 'NCC Parade Training',
+      category: 'Outdoors',
+      imageUrl: 'https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=800&h=600&fit=crop&auto=format',
+      description: 'Morning drill and parade practice sessions building discipline and leadership',
+      location: 'Parade Ground'
     },
     {
       id: 9,
-      title: 'NCC Parade Ground',
-      category: 'Sports & NCC',
-      imageUrl: 'https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=800&h=600&fit=crop&auto=format',
-      description: 'Morning drills and parade practice sessions'
+      title: 'Annual Cultural Festival',
+      category: 'Events',
+      imageUrl: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&auto=format',
+      description: 'Grand annual day celebration with performances by students and cultural programs',
+      location: 'Main Auditorium'
     },
     {
       id: 10,
-      title: 'Annual Day Stage',
-      category: 'Cultural Events',
-      imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop&auto=format',
-      description: 'Grand performances by students and cultural programs'
+      title: 'Digital Classroom',
+      category: 'Classrooms',
+      imageUrl: 'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=800&h=600&fit=crop&auto=format',
+      description: 'Technology-enabled learning environments with smart boards and interactive lessons',
+      location: 'Academic Block'
     },
     {
       id: 11,
-      title: 'Study Hall Evening',
-      category: 'Hostel Life',
-      imageUrl: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&h=600&fit=crop&auto=format',
-      description: 'Quiet study time in well-lit hostel study halls'
+      title: 'Mountain Hiking Expedition',
+      category: 'Outdoors',
+      imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&auto=format',
+      description: 'Students on educational expedition exploring the beautiful Himalayan terrain',
+      location: 'Nainital Hills'
     },
     {
       id: 12,
-      title: 'Mathematics Workshop',
-      category: 'Academics',
-      imageUrl: 'https://images.unsplash.com/photo-1596495578065-6e0763fa1178?w=800&h=600&fit=crop&auto=format',
-      description: 'Interactive problem-solving sessions for board preparation'
+      title: 'Traditional Dance Performance',
+      category: 'Events',
+      imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop&auto=format',
+      description: 'Students showcasing traditional Indian classical dance during cultural week',
+      location: 'Cultural Centre'
     }
   ];
 
@@ -138,7 +152,7 @@ const StaticGallery = () => {
       <div 
         className="absolute inset-0 opacity-10"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=1200&h=800&fit=crop&auto=format)',
+          backgroundImage: 'url(https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop&auto=format)',
           backgroundSize: 'cover',
           backgroundAttachment: 'fixed',
           transform: `translateY(${parallaxOffset}px)`
@@ -149,25 +163,25 @@ const StaticGallery = () => {
         <GlassyPanel className="p-8 mb-12" blur="medium" opacity="medium">
           <div className="text-center animate-fade-in-up">
             <h2 className="heading-secondary mb-4">Campus Life Gallery</h2>
-            <p className="text-elegant max-w-2xl mx-auto">
-              Explore the vibrant life at BVM through our comprehensive photo gallery showcasing academics, residential life, and co-curricular excellence
+            <p className="text-elegant max-w-3xl mx-auto">
+              Explore the vibrant life at BVM through our comprehensive photo gallery showcasing academics, residential life, traditions, and the natural beauty of our Himalayan campus
             </p>
           </div>
         </GlassyPanel>
 
         {/* Filter Buttons in Glassy Panel */}
         <GlassyPanel className="p-6 mb-8" blur="light" opacity="low">
-          <div className="flex flex-wrap justify-center gap-2 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+          <div className="flex flex-wrap justify-center gap-3 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
             {categories.map((category) => (
               <Button
                 key={category}
                 variant={activeFilter === category ? "default" : "outline"}
                 onClick={() => setActiveFilter(category)}
                 className={`
-                  transition-all duration-300 hover:scale-105
+                  transition-all duration-300 hover:scale-105 font-medium
                   ${activeFilter === category 
                     ? 'bg-bvm-navy hover:bg-bvm-heritage shadow-lg' 
-                    : 'hover:bg-bvm-navy hover:text-background'
+                    : 'hover:bg-bvm-navy hover:text-white border-bvm-navy text-bvm-navy'
                   }
                 `}
               >
@@ -182,9 +196,9 @@ const StaticGallery = () => {
           {filteredItems.map((item, index) => (
             <Card 
               key={item.id}
-              className="group cursor-pointer overflow-hidden hover:shadow-xl 
+              className="group cursor-pointer overflow-hidden hover:shadow-2xl 
                        transition-all duration-300 hover:-translate-y-2 animate-fade-in-up
-                       bg-background/80 backdrop-blur-sm border-background/20"
+                       bg-white/90 backdrop-blur-sm border-white/20 hover:glow"
               style={{animationDelay: `${0.1 * index}s`}}
               onClick={() => openLightbox(index)}
             >
@@ -193,19 +207,30 @@ const StaticGallery = () => {
                   <img
                     src={item.imageUrl}
                     alt={item.title}
-                    className="w-full h-48 object-cover transition-transform duration-300 
+                    className="w-full h-56 object-cover transition-transform duration-500 
                              group-hover:scale-110"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-bvm-navy/0 group-hover:bg-bvm-navy/20 
-                                transition-colors duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent 
+                                opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                  
+                  {/* Category badge */}
+                  <div className="absolute top-3 left-3 bg-bvm-navy/90 text-white px-3 py-1 rounded-full text-xs font-medium shadow-lg">
+                    {item.category}
+                  </div>
+                  
+                  {/* Location badge */}
+                  {item.location && (
+                    <div className="absolute bottom-3 right-3 bg-white/90 text-bvm-navy px-2 py-1 rounded-full text-xs font-medium flex items-center shadow-lg">
+                      <MapPin className="h-3 w-3 mr-1" />
+                      {item.location}
+                    </div>
+                  )}
                 </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-bvm-navy mb-1 group-hover:text-bvm-heritage 
-                               transition-colors">{item.title}</h3>
-                  <p className="text-sm text-bvm-heritage">{item.description}</p>
-                  <span className="inline-block mt-2 px-2 py-1 bg-bvm-gold/10 text-bvm-navy 
-                                 text-xs rounded-full">{item.category}</span>
+                <div className="p-5">
+                  <h3 className="font-semibold text-bvm-navy mb-2 group-hover:text-bvm-heritage 
+                               transition-colors text-lg">{item.title}</h3>
+                  <p className="text-sm text-bvm-heritage leading-relaxed">{item.description}</p>
                 </div>
               </CardContent>
             </Card>
@@ -219,12 +244,12 @@ const StaticGallery = () => {
                      animate-fade-in"
             onClick={closeLightbox}
           >
-            <div className="relative bg-background rounded-lg max-w-4xl max-h-[90vh] overflow-hidden 
-                          animate-scale-in" onClick={(e) => e.stopPropagation()}>
+            <div className="relative bg-white rounded-xl max-w-5xl max-h-[90vh] overflow-hidden 
+                          animate-scale-in shadow-2xl" onClick={(e) => e.stopPropagation()}>
               <button
                 onClick={closeLightbox}
-                className="absolute top-4 right-4 z-10 bg-black/50 text-white rounded-full p-2 
-                         hover:bg-black/70 transition-colors"
+                className="absolute top-4 right-4 z-10 bg-black/50 text-white rounded-full p-3 
+                         hover:bg-black/70 transition-colors shadow-lg"
               >
                 <X className="h-6 w-6" />
               </button>
@@ -232,7 +257,7 @@ const StaticGallery = () => {
               <button
                 onClick={prevImage}
                 className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 
-                         bg-black/50 text-white rounded-full p-2 hover:bg-black/70 transition-colors"
+                         bg-black/50 text-white rounded-full p-3 hover:bg-black/70 transition-colors shadow-lg"
               >
                 <ChevronLeft className="h-6 w-6" />
               </button>
@@ -240,7 +265,7 @@ const StaticGallery = () => {
               <button
                 onClick={nextImage}
                 className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 
-                         bg-black/50 text-white rounded-full p-2 hover:bg-black/70 transition-colors"
+                         bg-black/50 text-white rounded-full p-3 hover:bg-black/70 transition-colors shadow-lg"
               >
                 <ChevronRight className="h-6 w-6" />
               </button>
@@ -250,13 +275,25 @@ const StaticGallery = () => {
                 alt={galleryItems[selectedImageIndex].title}
                 className="w-full h-auto max-h-[60vh] object-contain"
               />
-              <div className="p-6">
-                <h3 className="font-playfair text-2xl font-semibold text-bvm-navy mb-2">
-                  {galleryItems[selectedImageIndex].title}
-                </h3>
-                <p className="text-bvm-heritage mb-3">{galleryItems[selectedImageIndex].description}</p>
-                <span className="inline-block px-3 py-1 bg-bvm-gold text-bvm-navy 
-                               text-sm rounded-full">{galleryItems[selectedImageIndex].category}</span>
+              <div className="p-8">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="font-playfair text-3xl font-semibold text-bvm-navy">
+                    {galleryItems[selectedImageIndex].title}
+                  </h3>
+                  <span className="inline-flex items-center px-4 py-2 bg-bvm-navy text-white 
+                                 text-sm rounded-full font-medium">
+                    {galleryItems[selectedImageIndex].category}
+                  </span>
+                </div>
+                <p className="text-bvm-heritage mb-4 text-lg leading-relaxed">
+                  {galleryItems[selectedImageIndex].description}
+                </p>
+                {galleryItems[selectedImageIndex].location && (
+                  <div className="flex items-center text-bvm-mountain">
+                    <MapPin className="h-4 w-4 mr-2" />
+                    <span className="font-medium">{galleryItems[selectedImageIndex].location}</span>
+                  </div>
+                )}
               </div>
             </div>
           </div>
