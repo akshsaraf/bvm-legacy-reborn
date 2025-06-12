@@ -1,43 +1,32 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-
 const WhyChooseBVMSection = () => {
-  const advantages = [
-    {
-      title: 'Fully Residential Excellence',
-      description: 'Complete boarding environment fostering independence, discipline, and lifelong friendships',
-      icon: '🏠'
-    },
-    {
-      title: 'Himalayan Campus',
-      description: '74-acre campus at 7,800 ft altitude with world\'s highest-altitude playground and swimming pool',
-      icon: '🏔️'
-    },
-    {
-      title: 'CBSE Curriculum',
-      description: 'Comprehensive CBSE curriculum with emphasis on both academics and character building',
-      icon: '📚'
-    },
-    {
-      title: 'Board Preparation',
-      description: 'Special Board Prep program in Lucknow for Classes X & XII during December-February',
-      icon: '🎯'
-    },
-    {
-      title: 'Prestigious Affiliations',
-      description: 'Member of IPSC, NPSC, CBSE Sahodaya, and International Confederation of Principals',
-      icon: '🏆'
-    },
-    {
-      title: 'Cultural Heritage',
-      description: 'Sanskrit prayers before meals, festival celebrations, and deep Indian cultural grounding',
-      icon: '🕉️'
-    }
-  ];
-
-  return (
-    <section className="section-padding bg-muted/30">
+  const advantages = [{
+    title: 'Fully Residential Excellence',
+    description: 'Complete boarding environment fostering independence, discipline, and lifelong friendships',
+    icon: '🏠'
+  }, {
+    title: 'Himalayan Campus',
+    description: '74-acre campus at 7,800 ft altitude with world\'s highest-altitude playground and swimming pool',
+    icon: '🏔️'
+  }, {
+    title: 'CBSE Curriculum',
+    description: 'Comprehensive CBSE curriculum with emphasis on both academics and character building',
+    icon: '📚'
+  }, {
+    title: 'Board Preparation',
+    description: 'Special Board Prep program in Lucknow for Classes X & XII during December-February',
+    icon: '🎯'
+  }, {
+    title: 'Prestigious Affiliations',
+    description: 'Member of IPSC, NPSC, CBSE Sahodaya, and International Confederation of Principals',
+    icon: '🏆'
+  }, {
+    title: 'Cultural Heritage',
+    description: 'Sanskrit prayers before meals, festival celebrations, and deep Indian cultural grounding',
+    icon: '🕉️'
+  }];
+  return <section className="section-padding bg-muted/30">
       <div className="container-width">
         <div className="text-center mb-16">
           <h2 className="heading-secondary mb-6">Why Choose BVM?</h2>
@@ -48,8 +37,7 @@ const WhyChooseBVMSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {advantages.map((advantage, index) => (
-            <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-bvm-navy/10">
+          {advantages.map((advantage, index) => <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-bvm-navy/10">
               <CardContent className="p-6 text-center">
                 <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
                   {advantage.icon}
@@ -61,8 +49,7 @@ const WhyChooseBVMSection = () => {
                   {advantage.description}
                 </p>
               </CardContent>
-            </Card>
-          ))}
+            </Card>)}
         </div>
 
         {/* Key Statistics */}
@@ -78,8 +65,10 @@ const WhyChooseBVMSection = () => {
               <div className="text-sm opacity-90">Students</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-bvm-gold mb-2">₹4 Lakhs</div>
-              <div className="text-sm opacity-90">Annual Fees</div>
+              <div className="text-3xl font-bold text-bvm-gold mb-2">
+            </div>
+              <div className="text-sm opacity-90">
+            </div>
             </div>
             <div>
               <div className="text-3xl font-bold text-bvm-gold mb-2">100%</div>
@@ -88,8 +77,6 @@ const WhyChooseBVMSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default WhyChooseBVMSection;
