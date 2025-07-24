@@ -1,45 +1,31 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useParallax } from '@/hooks/useParallax';
-
 const HeroSection = () => {
   const parallaxOffset = useParallax(0.3);
-
-  return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center bg-mountain-gradient overflow-hidden">
+  return <section id="hero" className="relative min-h-screen flex items-center justify-center bg-mountain-gradient overflow-hidden">
       {/* Parallax Background Image */}
-      <div 
-        className="absolute inset-0 opacity-30 transition-transform duration-75"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=2000&auto=format&fit=crop')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          transform: `translateY(${parallaxOffset}px)`
-        }}
-      />
+      <div className="absolute inset-0 opacity-30 transition-transform duration-75" style={{
+      backgroundImage: `url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=2000&auto=format&fit=crop')`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      transform: `translateY(${parallaxOffset}px)`
+    }} />
       
       {/* Parallax BVM Logo Background */}
-      <div 
-        className="absolute top-1/4 right-1/4 w-96 h-96 opacity-5 transition-transform duration-75"
-        style={{
-          backgroundImage: `url('/lovable-uploads/f6e2ab58-4e8d-4de4-805d-baa1a97d46f2.png')`,
-          backgroundSize: 'contain',
-          backgroundRepeat: 'no-repeat',
-          transform: `translateY(${parallaxOffset * 0.5}px)`
-        }}
-      />
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 opacity-5 transition-transform duration-75" style={{
+      backgroundImage: `url('/lovable-uploads/f6e2ab58-4e8d-4de4-805d-baa1a97d46f2.png')`,
+      backgroundSize: 'contain',
+      backgroundRepeat: 'no-repeat',
+      transform: `translateY(${parallaxOffset * 0.5}px)`
+    }} />
       
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         {/* School Crest with actual BVM logo */}
         <div className="mb-8 animate-float">
           <div className="w-32 h-32 mx-auto bg-background/20 backdrop-blur-sm rounded-full flex items-center justify-center shadow-2xl border border-background/30">
-            <img 
-              src="/lovable-uploads/f6e2ab58-4e8d-4de4-805d-baa1a97d46f2.png" 
-              alt="BVM Logo" 
-              className="w-20 h-20 object-contain"
-            />
+            <img src="/lovable-uploads/f6e2ab58-4e8d-4de4-805d-baa1a97d46f2.png" alt="BVM Logo" className="w-20 h-20 object-contain" />
           </div>
         </div>
 
@@ -48,12 +34,16 @@ const HeroSection = () => {
           Birla Vidya Mandir
         </h1>
         
-        <p className="text-xl md:text-2xl text-background/90 mb-4 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+        <p className="text-xl md:text-2xl text-background/90 mb-4 animate-fade-in-up" style={{
+        animationDelay: '0.2s'
+      }}>
           Nainital
         </p>
 
         {/* Tagline */}
-        <div className="mb-8 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+        <div className="mb-8 animate-fade-in-up" style={{
+        animationDelay: '0.4s'
+      }}>
           <h2 className="text-2xl md:text-3xl font-semibold text-bvm-gold mb-2">
             Discipline • Knowledge • Leadership
           </h2>
@@ -63,26 +53,19 @@ const HeroSection = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{animationDelay: '0.6s'}}>
-          <Button 
-            size="lg" 
-            className="bg-bvm-gold text-bvm-navy hover:bg-bvm-gold/90 font-semibold focus:outline-none focus:ring-4 focus:ring-bvm-gold/50 transition-all duration-300 hover:scale-105 hover:shadow-xl"
-            aria-label="Start virtual campus tour"
-          >
+        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{
+        animationDelay: '0.6s'
+      }}>
+          <Button size="lg" className="bg-bvm-gold text-bvm-navy hover:bg-bvm-gold/90 font-semibold focus:outline-none focus:ring-4 focus:ring-bvm-gold/50 transition-all duration-300 hover:scale-105 hover:shadow-xl" aria-label="Start virtual campus tour">
             Explore Campus Tour
           </Button>
-          <Button 
-            size="lg" 
-            variant="outline"
-            className="border-background text-background hover:bg-background hover:text-bvm-navy font-semibold focus:outline-none focus:ring-4 focus:ring-background/50 transition-all duration-300 hover:scale-105"
-            aria-label="Learn about admissions process"
-          >
-            Admissions Info
-          </Button>
+          
         </div>
 
         {/* Statistics */}
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in-up" style={{animationDelay: '0.8s'}}>
+        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in-up" style={{
+        animationDelay: '0.8s'
+      }}>
           <div className="text-center">
             <div className="text-3xl font-bold text-bvm-gold">78</div>
             <div className="text-sm text-background/80">Years of Excellence</div>
@@ -108,8 +91,6 @@ const HeroSection = () => {
           <div className="w-1 h-3 bg-background rounded-full mt-2"></div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
