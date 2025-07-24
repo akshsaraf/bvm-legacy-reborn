@@ -239,6 +239,16 @@
     }
   }
 
+  /* Glass card utilities */
+  .glass-card {
+    @apply bg-white/90 backdrop-blur-md border border-white/30 shadow-xl hover:shadow-2xl;
+    backdrop-filter: blur(12px);
+    background: linear-gradient(135deg, 
+      hsl(var(--background) / 0.9) 0%, 
+      hsl(var(--background) / 0.8) 100%);
+    border: 1px solid hsl(var(--border) / 0.3);
+  }
+
   /* Frosted glass pill for like counter */
   .frosted-glass-pill {
     backdrop-filter: blur(12px);
@@ -246,6 +256,34 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     border-radius: 9999px;
+  }
+
+  /* Enhanced focus states for accessibility */
+  .focus-visible {
+    @apply outline-none ring-4 ring-bvm-sky/50 ring-offset-2 ring-offset-background;
+  }
+
+  /* Skip to content link */
+  .skip-link {
+    @apply absolute -top-full left-4 bg-bvm-navy text-white px-4 py-2 rounded-md z-50 transition-all duration-300;
+  }
+
+  .skip-link:focus {
+    @apply top-4;
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in-up,
+    .animate-float,
+    .animate-pulse,
+    .group:hover .-translate-y-3,
+    .group:hover:rotate-1,
+    .group:hover:-rotate-1 {
+      animation: none !important;
+      transform: none !important;
+      transition: none !important;
+    }
   }
 
   .frosted-glass-pill:hover {

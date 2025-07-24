@@ -64,8 +64,20 @@ const HeroSection = () => {
 
         {/* Call to Action */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{animationDelay: '0.6s'}}>
-          <Button size="lg" className="bg-bvm-gold text-bvm-navy hover:bg-bvm-gold/90 font-semibold">
+          <Button 
+            size="lg" 
+            className="bg-bvm-gold text-bvm-navy hover:bg-bvm-gold/90 font-semibold focus:outline-none focus:ring-4 focus:ring-bvm-gold/50 transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            aria-label="Start virtual campus tour"
+          >
             Explore Campus Tour
+          </Button>
+          <Button 
+            size="lg" 
+            variant="outline"
+            className="border-background text-background hover:bg-background hover:text-bvm-navy font-semibold focus:outline-none focus:ring-4 focus:ring-background/50 transition-all duration-300 hover:scale-105"
+            aria-label="Learn about admissions process"
+          >
+            Admissions Info
           </Button>
         </div>
 
