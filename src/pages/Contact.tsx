@@ -2,6 +2,7 @@
 import React from 'react';
 import EnhancedNavigation from '@/components/EnhancedNavigation';
 import ContactSection from '@/components/ContactSection';
+import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -35,6 +36,7 @@ const Contact = () => {
 
       {/* Content Sections */}
       <ContactSection />
+      <Footer />
     </div>
   );
 };

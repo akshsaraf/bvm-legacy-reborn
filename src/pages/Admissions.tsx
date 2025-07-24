@@ -1,6 +1,7 @@
 
 import React from 'react';
 import EnhancedNavigation from '@/components/EnhancedNavigation';
+import Footer from '@/components/Footer';
 import AdmissionsSection from '@/components/AdmissionsSection';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Download, FileText, Users, Calendar } from 'lucide-react';
@@ -84,6 +85,7 @@ const Admissions = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

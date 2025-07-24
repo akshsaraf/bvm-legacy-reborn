@@ -1,6 +1,7 @@
 
 import React from 'react';
 import EnhancedNavigation from '@/components/EnhancedNavigation';
+import Footer from '@/components/Footer';
 import NewsAchievements from '@/components/NewsAchievements';
 import NoticeBoard from '@/components/NoticeBoard';
 import RecognitionWall from '@/components/RecognitionWall';
@@ -39,6 +40,7 @@ const News = () => {
       <NewsAchievements />
       <NoticeBoard />
       <RecognitionWall />
+      <Footer />
     </div>
   );
 };

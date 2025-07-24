@@ -1,6 +1,7 @@
 
 import React from 'react';
 import EnhancedNavigation from '@/components/EnhancedNavigation';
+import Footer from '@/components/Footer';
 import AcademicsSection from '@/components/AcademicsSection';
 import TrophyShowcase from '@/components/TrophyShowcase';
 import ResultsSection from '@/components/ResultsSection';
@@ -39,6 +40,7 @@ const Academics = () => {
       <AcademicsSection />
       <ResultsSection />
       <TrophyShowcase />
+      <Footer />
     </div>
   );
 };

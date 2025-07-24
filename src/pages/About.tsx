@@ -1,6 +1,7 @@
 
 import React from 'react';
 import EnhancedNavigation from '@/components/EnhancedNavigation';
+import Footer from '@/components/Footer';
 import AboutSection from '@/components/AboutSection';
 import ImprovedPrincipalDesk from '@/components/ImprovedPrincipalDesk';
 import { Button } from '@/components/ui/button';
@@ -63,9 +64,10 @@ const About = () => {
                 <li>• <strong>Service:</strong> Contributing to society</li>
                 <li>• <strong>Integrity:</strong> Moral and ethical conduct</li>
               </ul>
-            </div>
-          </div>
         </div>
+      </div>
+      <Footer />
+    </div>
       </section>
     </div>
   );

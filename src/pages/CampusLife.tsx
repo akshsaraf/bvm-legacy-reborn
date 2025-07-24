@@ -1,6 +1,7 @@
 
 import React from 'react';
 import EnhancedNavigation from '@/components/EnhancedNavigation';
+import Footer from '@/components/Footer';
 import DayAtBVM from '@/components/DayAtBVM';
 import BVMCulture from '@/components/BVMCulture';
 import PinboardMemories from '@/components/PinboardMemories';
@@ -41,6 +42,7 @@ const CampusLife = () => {
       <BVMCulture />
       <PinboardMemories />
       <EventCalendar />
+      <Footer />
     </div>
   );
 };

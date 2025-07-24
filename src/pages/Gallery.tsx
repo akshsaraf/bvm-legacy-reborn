@@ -1,6 +1,7 @@
 
 import React from 'react';
 import EnhancedNavigation from '@/components/EnhancedNavigation';
+import Footer from '@/components/Footer';
 import StaticGallery from '@/components/StaticGallery';
 import ArtWall from '@/components/ArtWall';
 import { Button } from '@/components/ui/button';
@@ -37,6 +38,7 @@ const Gallery = () => {
       {/* Content Sections */}
       <StaticGallery />
       <ArtWall />
+      <Footer />
     </div>
   );
 };

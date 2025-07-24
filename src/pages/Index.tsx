@@ -6,6 +6,7 @@ import EnhancedNavigation from '@/components/EnhancedNavigation';
 import LoadingScreen from '@/components/LoadingScreen';
 import HeroSection from '@/components/HeroSection';
 import LegacyVideoSection from '@/components/LegacyVideoSection';
+import Footer from '@/components/Footer';
 import WhyChooseBVMSection from '@/components/WhyChooseBVMSection';
 import LiveStats from '@/components/LiveStats';
 import LikeCounter from '@/components/LikeCounter';
@@ -213,6 +214,7 @@ const Index = () => {
         <WhyChooseBVMSection />
         <LiveStats />
       </main>
+      <Footer />
     </div>
   );
 };
