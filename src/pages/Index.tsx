@@ -1,7 +1,6 @@
 
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import DisclaimerBanner from '@/components/DisclaimerBanner';
 import EnhancedNavigation from '@/components/EnhancedNavigation';
 import LoadingScreen from '@/components/LoadingScreen';
 import HeroSection from '@/components/HeroSection';
@@ -48,7 +47,6 @@ const Index = () => {
       </a>
       
       <LoadingScreen />
-      <DisclaimerBanner />
       <EnhancedNavigation />
       <LikeCounter />
       
