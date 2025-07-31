@@ -69,7 +69,7 @@ const Index = () => {
             <div className="inline-block p-3 bg-bvm-gold/10 rounded-full mb-6 animate-float">
               <div className="w-16 h-16 bg-bvm-gold rounded-full flex items-center justify-center">
                 <img 
-                  src="/uploads/f6e2ab58-4e8d-4de4-805d-baa1a97d46f2.png" 
+                  src="/lovable-uploads/f6e2ab58-4e8d-4de4-805d-baa1a97d46f2.png" 
                   alt="BVM Logo" 
                   className="w-10 h-10 object-contain"
                 />
