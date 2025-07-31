@@ -1,10 +1,12 @@
 
 import React, { useState } from 'react';
-import { GraduationCap, Home, Trophy, Camera, Satellite } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { GraduationCap, Home, Trophy, Camera, Satellite, Users, Phone, Newspaper, UserCheck } from 'lucide-react';
 import GlassyPanel from './GlassyPanel';
 
 const SatelliteOrbit = () => {
   const [hoveredOrbit, setHoveredOrbit] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   const orbitItems = [
     {
@@ -12,40 +14,61 @@ const SatelliteOrbit = () => {
       icon: GraduationCap,
       label: 'Academics',
       description: 'Excellence in Education',
-      section: 'academics',
-      color: 'text-blue-500'
+      route: '/academics',
+      color: 'text-blue-400'
     },
     {
-      id: 'hostel',
+      id: 'campus-life',
       icon: Home,
-      label: 'Hostel Life',
+      label: 'Campus Life',
       description: 'Home Away from Home',
-      section: 'why-bvm',
-      color: 'text-green-500'
+      route: '/campus-life',
+      color: 'text-green-400'
     },
     {
-      id: 'achievements',
-      icon: Trophy,
-      label: 'Achievements',
-      description: 'Celebrating Success',
-      section: 'about',
-      color: 'text-yellow-500'
+      id: 'about',
+      icon: Users,
+      label: 'About BVM',
+      description: 'Our Legacy & Vision',
+      route: '/about',
+      color: 'text-yellow-400'
     },
     {
       id: 'gallery',
       icon: Camera,
       label: 'Gallery',
       description: 'Captured Memories',
-      section: 'gallery',
-      color: 'text-purple-500'
+      route: '/gallery',
+      color: 'text-purple-400'
+    },
+    {
+      id: 'admissions',
+      icon: UserCheck,
+      label: 'Admissions',
+      description: 'Join Our Family',
+      route: '/admissions',
+      color: 'text-pink-400'
+    },
+    {
+      id: 'news',
+      icon: Newspaper,
+      label: 'News & Events',
+      description: 'Latest Updates',
+      route: '/news',
+      color: 'text-orange-400'
+    },
+    {
+      id: 'contact',
+      icon: Phone,
+      label: 'Contact Us',
+      description: 'Get in Touch',
+      route: '/contact',
+      color: 'text-cyan-400'
     }
   ];
 
-  const navigateToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleNavigation = (route: string) => {
+    navigate(route);
   };
 
   return (
@@ -76,8 +99,8 @@ const SatelliteOrbit = () => {
           </p>
         </div>
 
-        <div className="flex items-center justify-center min-h-[600px]">
-          <div className="relative w-96 h-96">
+        <div className="flex items-center justify-center min-h-[700px]">
+          <div className="relative w-[500px] h-[500px]">
             {/* Central BVM Crest */}
             <div className="absolute inset-0 flex items-center justify-center">
               <GlassyPanel className="w-32 h-32 flex items-center justify-center bg-bvm-gold/20 border-2 border-bvm-gold">
@@ -91,8 +114,9 @@ const SatelliteOrbit = () => {
 
             {/* Orbiting elements */}
             {orbitItems.map((item, index) => {
-              const angle = (index * 90) + (Date.now() / 3000) % 360;
-              const radius = 150;
+              const angleStep = 360 / orbitItems.length;
+              const angle = (index * angleStep) + (Date.now() / 5000) % 360;
+              const radius = 160;
               const x = Math.cos((angle * Math.PI) / 180) * radius;
               const y = Math.sin((angle * Math.PI) / 180) * radius;
 
@@ -114,7 +138,7 @@ const SatelliteOrbit = () => {
                     }`}
                     onMouseEnter={() => setHoveredOrbit(item.id)}
                     onMouseLeave={() => setHoveredOrbit(null)}
-                    onClick={() => navigateToSection(item.section)}
+                    onClick={() => handleNavigation(item.route)}
                   >
                     <item.icon className={`h-8 w-8 ${item.color}`} />
                   </GlassyPanel>
@@ -136,8 +160,9 @@ const SatelliteOrbit = () => {
 
             {/* Orbital paths */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="w-80 h-80 border border-background/20 rounded-full animate-spin" style={{ animationDuration: '20s' }} />
-              <div className="absolute w-72 h-72 border border-background/10 rounded-full animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }} />
+              <div className="w-[400px] h-[400px] border border-background/20 rounded-full animate-spin" style={{ animationDuration: '30s' }} />
+              <div className="absolute w-[360px] h-[360px] border border-background/10 rounded-full animate-spin" style={{ animationDuration: '25s', animationDirection: 'reverse' }} />
+              <div className="absolute w-[320px] h-[320px] border border-bvm-gold/10 rounded-full animate-spin" style={{ animationDuration: '40s' }} />
             </div>
           </div>
         </div>
