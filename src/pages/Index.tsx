@@ -9,6 +9,7 @@ import Footer from '@/components/Footer';
 import WhyChooseBVMSection from '@/components/WhyChooseBVMSection';
 import LiveStats from '@/components/LiveStats';
 import LikeCounter from '@/components/LikeCounter';
+import QuickActions from '@/components/QuickActions';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, BookOpen, Camera, Users, Trophy, Phone, Newspaper } from 'lucide-react';
 
@@ -213,6 +214,9 @@ const Index = () => {
         {/* Why Choose BVM & Quick Stats */}
         <WhyChooseBVMSection />
         <LiveStats />
+        
+        {/* Quick Actions & Newsletter */}
+        <QuickActions />
       </main>
       <Footer />
     </div>

@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import NewsAchievements from '@/components/NewsAchievements';
 import NoticeBoard from '@/components/NoticeBoard';
 import RecognitionWall from '@/components/RecognitionWall';
+import NewsletterSubscription from '@/components/NewsletterSubscription';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -40,6 +41,24 @@ const News = () => {
       <NewsAchievements />
       <NoticeBoard />
       <RecognitionWall />
+      
+      {/* Newsletter Subscription */}
+      <section className="section-padding bg-gradient-to-br from-bvm-heritage/5 to-bvm-gold/5">
+        <div className="container-width">
+          <div className="text-center mb-8">
+            <h2 className="font-playfair text-3xl font-bold text-bvm-navy mb-4">
+              Stay Connected
+            </h2>
+            <p className="text-lg text-bvm-heritage max-w-xl mx-auto mb-8">
+              Don't miss out on important updates, events, and achievements. Subscribe to our newsletter for the latest BVM news.
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <NewsletterSubscription />
+          </div>
+        </div>
+      </section>
+      
       <Footer />
     </div>
   );

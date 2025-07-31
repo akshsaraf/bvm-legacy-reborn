@@ -2,6 +2,7 @@
 import React from 'react';
 import EnhancedNavigation from '@/components/EnhancedNavigation';
 import ContactSection from '@/components/ContactSection';
+import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
@@ -36,6 +37,22 @@ const Contact = () => {
 
       {/* Content Sections */}
       <ContactSection />
+      
+      {/* Contact Form Section */}
+      <section className="section-padding bg-gradient-to-br from-background to-muted">
+        <div className="container-width">
+          <div className="text-center mb-12">
+            <h2 className="font-playfair text-3xl md:text-4xl font-bold text-bvm-navy mb-4">
+              Send us a Message
+            </h2>
+            <p className="text-lg text-bvm-heritage max-w-2xl mx-auto">
+              Have questions about admissions, academics, or campus life? We're here to help. Fill out the form below and we'll get back to you promptly.
+            </p>
+          </div>
+          <ContactForm />
+        </div>
+      </section>
+      
       <Footer />
     </div>
   );

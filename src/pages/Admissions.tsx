@@ -3,6 +3,7 @@ import React from 'react';
 import EnhancedNavigation from '@/components/EnhancedNavigation';
 import Footer from '@/components/Footer';
 import AdmissionsSection from '@/components/AdmissionsSection';
+import AdmissionsForm from '@/components/AdmissionsForm';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Download, FileText, Users, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -85,6 +86,22 @@ const Admissions = () => {
           </div>
         </div>
       </section>
+
+      {/* Admissions Form Section */}
+      <section className="section-padding bg-gradient-to-br from-background to-muted">
+        <div className="container-width">
+          <div className="text-center mb-12">
+            <h2 className="font-playfair text-3xl md:text-4xl font-bold text-bvm-navy mb-4">
+              Apply for Admission
+            </h2>
+            <p className="text-lg text-bvm-heritage max-w-2xl mx-auto">
+              Take the first step towards joining the BVM family. Fill out our comprehensive admission form to begin your journey with us.
+            </p>
+          </div>
+          <AdmissionsForm />
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
