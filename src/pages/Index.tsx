@@ -125,8 +125,6 @@ const Index = () => {
                 </div>
               </article>
             </Link>
-
-            <SatelliteOrbit/>
             
             <Link 
               to="/gallery" 
@@ -207,6 +205,9 @@ const Index = () => {
                 </div>
               </article>
             </Link>
+
+            <SatelliteOrbit/>
+            
           </div>
         </div>
       </section>
