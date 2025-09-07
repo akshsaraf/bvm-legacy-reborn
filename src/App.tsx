@@ -12,6 +12,11 @@ import Gallery from "./pages/Gallery";
 import Admissions from "./pages/Admissions";
 import News from "./pages/News";
 import Contact from "./pages/Contact";
+import Results from "./pages/Results";
+import DayAtBVMPage from "./pages/DayAtBVM";
+import Culture from "./pages/Culture";
+import Memories from "./pages/Memories";
+import Events from "./pages/Events";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +37,11 @@ const App = () => (
           <Route path="/admissions" element={<Admissions />} />
           <Route path="/news" element={<News />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/results" element={<Results />} />
+          <Route path="/day-at-bvm" element={<DayAtBVMPage />} />
+          <Route path="/culture" element={<Culture />} />
+          <Route path="/memories" element={<Memories />} />
+          <Route path="/events" element={<Events />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
