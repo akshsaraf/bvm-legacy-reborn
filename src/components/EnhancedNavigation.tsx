@@ -13,6 +13,7 @@ const EnhancedNavigation = () => {
     { label: 'About', href: '/about', id: 'about' },
     { label: 'Campus Life', href: '/campus-life', id: 'campus-life' },
     { label: 'Academics', href: '/academics', id: 'academics' },
+    { label: 'Results', href: '/results', id: 'results' },
     { label: 'Gallery', href: '/gallery', id: 'gallery' },
     { label: 'Admissions', href: '/admissions', id: 'admissions' },
     { label: 'News', href: '/news', id: 'news' },
