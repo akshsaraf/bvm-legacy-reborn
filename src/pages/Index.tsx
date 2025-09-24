@@ -1,4 +1,3 @@
-import SatelliteOrbit from '@/components/SatelliteOrbit';
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import EnhancedNavigation from '@/components/EnhancedNavigation';
@@ -204,10 +203,7 @@ const Index = () => {
                   </Button>
                 </div>
               </article>
-            </Link>
-
-            <SatelliteOrbit/>
-            
+            </Link>            
           </div>
         </div>
       </section>

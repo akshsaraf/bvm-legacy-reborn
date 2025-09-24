@@ -111,14 +111,7 @@ const StaticGallery = () => {
       description: 'Technology-enhanced learning with smart boards and digital resources for CBSE curriculum',
       location: 'Academic Block'
     },
-    {
-      id: 12,
-      title: 'Himalayan Nature Walks',
-      category: 'Sports',
-      imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&auto=format',
-      description: 'Educational treks through Nainital\'s pristine forests as part of environmental science curriculum',
-      location: 'Nainital Hills'
-    },
+
     {
       id: 13,
       title: 'Classical Dance Performances',
