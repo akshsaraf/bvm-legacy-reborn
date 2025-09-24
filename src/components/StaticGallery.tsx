@@ -20,104 +20,152 @@ const StaticGallery = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
   const parallaxOffset = useParallax(0.2);
 
-  const categories = ['All', 'Hostel', 'Classrooms', 'Events', 'Outdoors', 'Traditions'];
+  const categories = ['All', 'Heritage', 'Academics', 'Hostel', 'Sports', 'Events', 'Traditions'];
 
   const galleryItems: GalleryItem[] = [
     {
       id: 1,
-      title: 'Daily Morning Assembly',
-      category: 'Traditions',
-      imageUrl: 'https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=800&h=600&fit=crop&auto=format',
-      description: 'Daily morning assembly at the open-air parade ground with mountain backdrop',
-      location: 'Parade Ground'
+      title: 'Iconic BVM Main Building',
+      category: 'Heritage',
+      imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop&auto=format',
+      description: 'The historic main building of BVM established in 1947, showcasing colonial architecture against the Himalayan backdrop',
+      location: 'Main Campus'
     },
     {
       id: 2,
-      title: 'Chapel Prayer Service',
+      title: 'Morning Assembly Parade',
       category: 'Traditions',
-      imageUrl: 'https://images.unsplash.com/photo-1473177104440-ffee2f376098?w=800&h=600&fit=crop&auto=format',
-      description: 'Evening prayer service at the school chapel, fostering spiritual growth',
-      location: 'Chapel'
-    },
-    {
-      id: 3,
-      title: 'Modern Science Laboratory',
-      category: 'Classrooms',
-      imageUrl: 'https://images.unsplash.com/photo-1562813733-b31f71025d54?w=800&h=600&fit=crop&auto=format',
-      description: 'State-of-the-art physics laboratory for hands-on learning and experiments',
-      location: 'Science Block'
-    },
-    {
-      id: 4,
-      title: 'Hostel Room Life',
-      category: 'Hostel',
-      imageUrl: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&h=600&fit=crop&auto=format',
-      description: 'Comfortable hostel rooms with study areas and personal storage spaces',
-      location: 'Residential Blocks'
-    },
-    {
-      id: 5,
-      title: 'Library Study Session',
-      category: 'Classrooms',
-      imageUrl: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&h=600&fit=crop&auto=format',
-      description: 'Class 10 students during supervised study hour in the main library',
-      location: 'Central Library'
-    },
-    {
-      id: 6,
-      title: 'Evening Dining Hall',
-      category: 'Hostel',
-      imageUrl: 'https://images.unsplash.com/photo-1567521464027-f127ff144326?w=800&h=600&fit=crop&auto=format',
-      description: 'Students enjoying nutritious meals together with Sanskrit prayers before dining',
-      location: 'Main Dining Hall'
-    },
-    {
-      id: 7,
-      title: 'Cricket Practice Session',
-      category: 'Outdoors',
-      imageUrl: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=800&h=600&fit=crop&auto=format',
-      description: 'Inter-house cricket practice at one of the world\'s highest altitude grounds',
-      location: 'Sports Complex'
-    },
-    {
-      id: 8,
-      title: 'NCC Parade Training',
-      category: 'Outdoors',
       imageUrl: 'https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=800&h=600&fit=crop&auto=format',
-      description: 'Morning drill and parade practice sessions building discipline and leadership',
+      description: 'Daily morning assembly where 600+ students gather for prayers and announcements at 7,500 feet altitude',
       location: 'Parade Ground'
     },
     {
+      id: 3,
+      title: 'Chapel & Meditation Hall',
+      category: 'Traditions',
+      imageUrl: 'https://images.unsplash.com/photo-1473177104440-ffee2f376098?w=800&h=600&fit=crop&auto=format',
+      description: 'The sacred chapel where students from all faiths come together for evening prayers and reflection',
+      location: 'Chapel Complex'
+    },
+    {
+      id: 4,
+      title: 'Modern Physics Laboratory',
+      category: 'Academics',
+      imageUrl: 'https://images.unsplash.com/photo-1562813733-b31f71025d54?w=800&h=600&fit=crop&auto=format',
+      description: 'State-of-the-art physics lab with equipment for CBSE practicals and advanced research projects',
+      location: 'Science Block'
+    },
+    {
+      id: 5,
+      title: 'Senior House Dormitories',
+      category: 'Hostel',
+      imageUrl: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&h=600&fit=crop&auto=format',
+      description: 'Comfortable boarding facilities for Classes IX-XII with mountain views and modern amenities',
+      location: 'Senior Boarding'
+    },
+    {
+      id: 6,
+      title: 'Central Library & Study Hall',
+      category: 'Academics',
+      imageUrl: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&h=600&fit=crop&auto=format',
+      description: 'The Birla Central Library with over 25,000 books and silent study areas for board exam preparation',
+      location: 'Central Library'
+    },
+    {
+      id: 7,
+      title: 'Community Dining Experience',
+      category: 'Hostel',
+      imageUrl: 'https://images.unsplash.com/photo-1567521464027-f127ff144326?w=800&h=600&fit=crop&auto=format',
+      description: 'Nutritious vegetarian meals served with traditional grace before dining prayers',
+      location: 'Main Dining Hall'
+    },
+    {
+      id: 8,
+      title: 'High Altitude Cricket Ground',
+      category: 'Sports',
+      imageUrl: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=800&h=600&fit=crop&auto=format',
+      description: 'One of the world\'s highest cricket grounds where inter-house tournaments create lasting memories',
+      location: 'Sports Complex'
+    },
+    {
       id: 9,
-      title: 'Annual Cultural Festival',
-      category: 'Events',
-      imageUrl: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&auto=format',
-      description: 'Grand annual day celebration with performances by students and cultural programs',
-      location: 'Main Auditorium'
+      title: 'NCC Drill Training',
+      category: 'Sports',
+      imageUrl: 'https://images.unsplash.com/photo-1578045804542-31cdcb8df89f?w=800&h=600&fit=crop&auto=format',
+      description: 'National Cadet Corps training building discipline, leadership, and national service values',
+      location: 'Parade Ground'
     },
     {
       id: 10,
-      title: 'Digital Classroom',
-      category: 'Classrooms',
-      imageUrl: 'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=800&h=600&fit=crop&auto=format',
-      description: 'Technology-enabled learning environments with smart boards and interactive lessons',
-      location: 'Academic Block'
+      title: 'Founder\'s Day Celebration',
+      category: 'Events',
+      imageUrl: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&auto=format',
+      description: 'Annual celebration honoring G.D. Birla and showcasing student talents through cultural performances',
+      location: 'Main Auditorium'
     },
     {
       id: 11,
-      title: 'Mountain Hiking Expedition',
-      category: 'Outdoors',
-      imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&auto=format',
-      description: 'Students on educational expedition exploring the beautiful Himalayan terrain',
-      location: 'Nainital Hills'
+      title: 'Smart Interactive Classrooms',
+      category: 'Academics',
+      imageUrl: 'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=800&h=600&fit=crop&auto=format',
+      description: 'Technology-enhanced learning with smart boards and digital resources for CBSE curriculum',
+      location: 'Academic Block'
     },
     {
       id: 12,
-      title: 'Traditional Dance Performance',
+      title: 'Himalayan Nature Walks',
+      category: 'Sports',
+      imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&auto=format',
+      description: 'Educational treks through Nainital\'s pristine forests as part of environmental science curriculum',
+      location: 'Nainital Hills'
+    },
+    {
+      id: 13,
+      title: 'Classical Dance Performances',
       category: 'Events',
       imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop&auto=format',
-      description: 'Students showcasing traditional Indian classical dance during cultural week',
+      description: 'Students showcasing Indian classical dance traditions during cultural week and annual day',
       location: 'Cultural Centre'
+    },
+    {
+      id: 14,
+      title: 'Junior House Study Time',
+      category: 'Hostel',
+      imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=600&fit=crop&auto=format',
+      description: 'Supervised study hours for Classes VI-VIII in cozy junior boarding houses',
+      location: 'Junior Boarding'
+    },
+    {
+      id: 15,
+      title: 'Chemistry Practical Classes',
+      category: 'Academics',
+      imageUrl: 'https://images.unsplash.com/photo-1559757172-a934ddd2b4d9?w=800&h=600&fit=crop&auto=format',
+      description: 'Hands-on chemistry experiments preparing students for CBSE board practical examinations',
+      location: 'Chemistry Lab'
+    },
+    {
+      id: 16,
+      title: 'Heritage Walk Documentation',
+      category: 'Heritage',
+      imageUrl: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=800&h=600&fit=crop&auto=format',
+      description: 'Students documenting 75+ years of BVM history through photography and archival research',
+      location: 'Heritage Gallery'
+    },
+    {
+      id: 17,
+      title: 'Inter-House Basketball',
+      category: 'Sports',
+      imageUrl: 'https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?w=800&h=600&fit=crop&auto=format',
+      description: 'Competitive basketball matches between Ganga, Yamuna, and Godavari houses',
+      location: 'Basketball Court'
+    },
+    {
+      id: 18,
+      title: 'Music & Choir Practice',
+      category: 'Events',
+      imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop&auto=format',
+      description: 'Students practicing Indian and Western music for school choir and cultural competitions',
+      location: 'Music Room'
     }
   ];
 

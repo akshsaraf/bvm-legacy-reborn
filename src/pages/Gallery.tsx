@@ -4,6 +4,7 @@ import EnhancedNavigation from '@/components/EnhancedNavigation';
 import Footer from '@/components/Footer';
 import StaticGallery from '@/components/StaticGallery';
 import ArtWall from '@/components/ArtWall';
+import SocialMediaGallery from '@/components/SocialMediaGallery';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -37,6 +38,7 @@ const Gallery = () => {
 
       {/* Content Sections */}
       <StaticGallery />
+      <SocialMediaGallery />
       <ArtWall />
       <Footer />
     </div>

@@ -13,57 +13,111 @@ const ArtWall = () => {
   const artworks = [
     {
       id: 1,
-      title: 'Himalayan Sunrise',
-      artist: 'Arnav K., Class IX',
+      title: 'Nainital Lake at Dawn',
+      artist: 'Arjun Sharma, Class XI',
       image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop',
-      likes: 34,
+      likes: 156,
       category: 'Painting',
-      description: 'Watercolor – Theme: Brotherhood'
+      description: 'Watercolor masterpiece capturing the serene beauty of Naini Lake from BVM campus'
     },
     {
       id: 2,
-      title: 'Tilak House Victory Poster',
-      artist: 'Priya S., Class X',
+      title: 'Ganga House Championship',
+      artist: 'Riya Patel, Class XII',
       image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=300&fit=crop',
-      likes: 28,
+      likes: 89,
       category: 'Poster',
-      description: 'Inter-House Art Competition 2023'
+      description: 'Victory poster celebrating Ganga House winning the Inter-House Sports Championship 2024'
     },
     {
       id: 3,
-      title: 'Mountain Reflection',
-      artist: 'Rohit M., Class XII',
+      title: 'BVM Heritage Building',
+      artist: 'Vikram Singh, Class X',
       image: 'https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=400&h=300&fit=crop',
-      likes: 42,
+      likes: 112,
       category: 'Painting',
-      description: 'Oil on Canvas – Nature Study'
+      description: 'Oil painting of the iconic BVM main building established in 1947'
     },
     {
       id: 4,
-      title: 'Diwali Rangoli Design',
-      artist: 'Anjali T., Class XI',
+      title: 'Diwali Celebration Rangoli',
+      artist: 'Kavya Negi, Class IX',
       image: 'https://images.unsplash.com/photo-1605379399642-870262d3d051?w=400&h=300&fit=crop',
-      likes: 31,
+      likes: 94,
       category: 'Craft',
-      description: 'Traditional Patterns & Colors'
+      description: 'Intricate rangoli design created for BVM\'s Diwali celebration in the main courtyard'
     },
     {
       id: 5,
-      title: 'BVM Heritage Portrait',
-      artist: 'Karan D., Class XII',
+      title: '75 Years of BVM Legacy',
+      artist: 'Aditya Bisht, Class XII',
       image: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400&h=300&fit=crop',
-      likes: 38,
+      likes: 134,
       category: 'Digital',
-      description: 'Digital Art – School Legacy'
+      description: 'Digital artwork commemorating BVM\'s journey from 1947 to 2022'
     },
     {
       id: 6,
-      title: 'Science Fair Chart',
-      artist: 'Meera L., Class X',
+      title: 'Climate Action Project',
+      artist: 'Shreya Joshi, Class XI',
       image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop',
-      likes: 25,
+      likes: 76,
       category: 'Poster',
-      description: 'Physics Project – Solar Energy'
+      description: 'Environmental science project poster on Himalayan glacier conservation'
+    },
+    {
+      id: 7,
+      title: 'Traditional Kumaoni Art',
+      artist: 'Ankit Rawat, Class X',
+      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop',
+      likes: 87,
+      category: 'Craft',
+      description: 'Handcrafted artwork showcasing local Kumaoni cultural patterns and motifs'
+    },
+    {
+      id: 8,
+      title: 'House Unity Mural',
+      artist: 'Priyanka Bhatt, Class IX',
+      image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop',
+      likes: 98,
+      category: 'Painting',
+      description: 'Collaborative mural representing the four houses: Ganga, Yamuna, Godavari, and Narmada'
+    },
+    {
+      id: 9,
+      title: 'Digital Portrait Series',
+      artist: 'Rohit Mehta, Class XII',
+      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop',
+      likes: 103,
+      category: 'Digital',
+      description: 'Digital portraits of inspiring BVM alumni who made significant contributions to society'
+    },
+    {
+      id: 10,
+      title: 'Annual Day Backdrop',
+      artist: 'Art Club Collaboration',
+      image: 'https://images.unsplash.com/photo-1578045804542-31cdcb8df89f?w=400&h=300&fit=crop',
+      likes: 67,
+      category: 'Craft',
+      description: 'Hand-painted backdrop for the 2024 Annual Day cultural performances'
+    },
+    {
+      id: 11,
+      title: 'Astronomy Club Poster',
+      artist: 'Neha Agarwal, Class XI',
+      image: 'https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=400&h=300&fit=crop',
+      likes: 82,
+      category: 'Poster',
+      description: 'Educational poster about constellations visible from BVM\'s high altitude location'
+    },
+    {
+      id: 12,
+      title: 'Monsoon at BVM',
+      artist: 'Deepak Panwar, Class X',
+      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop',
+      likes: 91,
+      category: 'Painting',
+      description: 'Acrylic painting capturing the dramatic monsoon clouds over the BVM campus'
     }
   ];
 
