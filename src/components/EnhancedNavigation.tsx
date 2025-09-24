@@ -61,7 +61,7 @@ const EnhancedNavigation = () => {
               <img src="/lovable-uploads/f6e2ab58-4e8d-4de4-805d-baa1a97d46f2.png" alt="BVM Logo" className="w-10 h-10 object-contain" />
             </div>
             <div>
-              <h1 className="font-playfair font-bold text-lg text-bvm-navy">Birla Vidya Mandir</h1>
+              <h1 className="font-playfair font-bold text-bvm-navy text-xs">Birla Vidya Mandir</h1>
               <p className="text-xs text-bvm-heritage">Nainital • Since 1947</p>
             </div>
           </Link>
