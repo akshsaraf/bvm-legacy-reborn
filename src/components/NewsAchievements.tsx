@@ -28,7 +28,7 @@ const NewsAchievements = () => {
       date: "2024-11-15",
       icon: Trophy,
       color: "bg-yellow-50 text-yellow-600 border-yellow-200",
-      image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=300&fit=crop"
+      image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ipsc.co.in%2Fmember-details.asp%3Fid%3D7&psig=AOvVaw2yPIbOa94-7pc2tV2ZWxG3&ust=1758780712197000&source=images&cd=vfe&opi=89978449&ved=2ahUKEwip-fzt3vCPAxU3wDgGHR-DEtYQjRx6BAgAEBo"
     },
     {
       id: 2,
@@ -38,7 +38,7 @@ const NewsAchievements = () => {
       date: "2024-11-08",
       icon: Medal,
       color: "bg-green-50 text-green-600 border-green-200",
-      image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=600&h=300&fit=crop"
+      image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ipsc.co.in%2Fmember-details.asp%3Fid%3D7&psig=AOvVaw2yPIbOa94-7pc2tV2ZWxG3&ust=1758780712197000&source=images&cd=vfe&opi=89978449&ved=2ahUKEwip-fzt3vCPAxU3wDgGHR-DEtYQjRx6BAgAEBo"
     },
     {
       id: 3,
@@ -48,7 +48,7 @@ const NewsAchievements = () => {
       date: "2024-10-25",
       icon: BookOpen,
       color: "bg-blue-50 text-blue-600 border-blue-200",
-      image: "https://images.unsplash.com/photo-1562813733-b31f71025d54?w=600&h=300&fit=crop"
+      image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ipsc.co.in%2Fmember-details.asp%3Fid%3D7&psig=AOvVaw2yPIbOa94-7pc2tV2ZWxG3&ust=1758780712197000&source=images&cd=vfe&opi=89978449&ved=2ahUKEwip-fzt3vCPAxU3wDgGHR-DEtYQjRx6BAgAEBo"
     },
     {
       id: 4,
@@ -58,7 +58,7 @@ const NewsAchievements = () => {
       date: "2024-10-18",
       icon: Users,
       color: "bg-purple-50 text-purple-600 border-purple-200",
-      image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=600&h=300&fit=crop"
+      image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ipsc.co.in%2Fmember-details.asp%3Fid%3D7&psig=AOvVaw2yPIbOa94-7pc2tV2ZWxG3&ust=1758780712197000&source=images&cd=vfe&opi=89978449&ved=2ahUKEwip-fzt3vCPAxU3wDgGHR-DEtYQjRx6BAgAEBo"
     }
   ];
 

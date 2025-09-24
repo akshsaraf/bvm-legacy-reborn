@@ -7,7 +7,7 @@ const PinboardMemories = () => {
     {
       id: 1,
       type: 'photo',
-      content: 'https://images.unsplash.com/photo-1473177104440-ffee2f376098?w=300&h=200&fit=crop',
+      content: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ipsc.co.in%2Fmember-details.asp%3Fid%3D7&psig=AOvVaw2yPIbOa94-7pc2tV2ZWxG3&ust=1758780712197000&source=images&cd=vfe&opi=89978449&ved=2ahUKEwip-fzt3vCPAxU3wDgGHR-DEtYQjRx6BAgAEBo',
       caption: 'Morning assembly in the hills',
       rotation: 'rotate-3',
       likes: 24,
@@ -26,7 +26,7 @@ const PinboardMemories = () => {
     {
       id: 3,
       type: 'photo',
-      content: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=300&h=200&fit=crop',
+      content: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ipsc.co.in%2Fmember-details.asp%3Fid%3D7&psig=AOvVaw2yPIbOa94-7pc2tV2ZWxG3&ust=1758780712197000&source=images&cd=vfe&opi=89978449&ved=2ahUKEwip-fzt3vCPAxU3wDgGHR-DEtYQjRx6BAgAEBo',
       caption: 'Inter-house cricket finals',
       rotation: 'rotate-1',
       likes: 31,
@@ -45,7 +45,7 @@ const PinboardMemories = () => {
     {
       id: 5,
       type: 'photo',
-      content: 'https://images.unsplash.com/photo-1466442929976-97f336a657be?w=300&h=200&fit=crop',
+      content: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ipsc.co.in%2Fmember-details.asp%3Fid%3D7&psig=AOvVaw2yPIbOa94-7pc2tV2ZWxG3&ust=1758780712197000&source=images&cd=vfe&opi=89978449&ved=2ahUKEwip-fzt3vCPAxU3wDgGHR-DEtYQjRx6BAgAEBo',
       caption: 'Annual cultural fest preparations',
       rotation: 'rotate-2',
       likes: 27,
