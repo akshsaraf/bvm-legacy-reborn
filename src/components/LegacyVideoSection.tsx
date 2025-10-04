@@ -42,7 +42,7 @@ const LegacyVideoSection = () => {
             poster="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=600&fit=crop&auto=format"
           >
             {/* Using placeholder video source - would be replaced with actual BVM footage */}
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+            <source src="https://youtu.be/FmRNhBS5IOc?si=Cm8hbtJEBCRiOrjd" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
 

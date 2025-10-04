@@ -9,7 +9,8 @@ const ResultsSection = () => {
   const topScorers = [
     { name: "Dhairya Jain, Harsh Agarwal", score: "98.2%", subject: "Commerce", class: "XII" },
     { name: "Chitransh Bhatnagar", score: "97.2%", subject: "Science", class: "XII" },
-    { name: "Prianshu Gariya", score: "95.6%", subject: "Commerce", class: "XII" }
+    { name: "Prianshu Gariya", score: "95.6%", subject: "Commerce", class: "XII" },
+    { name: "Vansh Modi", score: "99.2", class: "X"}
   ];
 
   const resultStats = [
