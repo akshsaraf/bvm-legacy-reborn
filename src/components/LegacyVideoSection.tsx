@@ -36,7 +36,7 @@ const LegacyVideoSection = () => {
             className="absolute inset-0 bg-cover bg-center z-0"
             style={{
               backgroundImage:
-                'url(https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=600&fit=crop&auto=format)',
+                'url(https://www.istockphoto.com/photo/boats-on-blue-waters-colorful-buildings-and-rolling-fog-from-the-lake-of-nainital-a-gm2155599602-576405225?utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fnainital-lake&utm_medium=affiliate&utm_source=unsplash&utm_term=nainital+lake%3A%3A%3A)',
             }}
           />
 
@@ -48,7 +48,7 @@ const LegacyVideoSection = () => {
             muted={isMuted}   // 🔊 bound to state
             loop
             playsInline
-            poster="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=600&fit=crop&auto=format"
+            poster="https://www.istockphoto.com/photo/boats-on-blue-waters-colorful-buildings-and-rolling-fog-from-the-lake-of-nainital-a-gm2155599602-576405225?utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fnainital-lake&utm_medium=affiliate&utm_source=unsplash&utm_term=nainital+lake%3A%3A%3A"
           >
             <source src="/lovable-uploads/bvm-legacy.mp4" type="video/mp4" />
             Your browser does not support the video tag.
