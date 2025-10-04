@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 
 const LegacyVideoSection = () => {
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true); // 🔊 Added mute state
   const [videoRef, setVideoRef] = useState<HTMLVideoElement | null>(null);
 
   const togglePlayPause = () => {
@@ -17,12 +18,20 @@ const LegacyVideoSection = () => {
     }
   };
 
+  // 🔊 Toggle mute/unmute
+  const toggleMute = () => {
+    if (videoRef) {
+      videoRef.muted = !videoRef.muted;
+      setIsMuted(!isMuted);
+    }
+  };
+
   return (
     <section className="relative section-padding bg-bvm-navy overflow-hidden">
       <div className="container-width">
         {/* Video Container */}
         <div className="relative rounded-2xl overflow-hidden shadow-2xl mb-8 group">
-          {/* Fallback background image for mobile or if video fails */}
+          {/* Fallback background image */}
           <div
             className="absolute inset-0 bg-cover bg-center z-0"
             style={{
@@ -36,16 +45,12 @@ const LegacyVideoSection = () => {
             ref={setVideoRef}
             className="w-full h-[60vh] object-cover relative z-10"
             autoPlay
-            muted
+            muted={isMuted}   // 🔊 bound to state
             loop
             playsInline
             poster="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=600&fit=crop&auto=format"
           >
-            {/* Corrected source path – no /public prefix */}
-            <source
-              src="/lovable-uploads/bvm-legacy.mp4"
-              type="video/mp4"
-            />
+            <source src="/lovable-uploads/bvm-legacy.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
 
@@ -70,19 +75,30 @@ const LegacyVideoSection = () => {
                 From assembly drills to annual celebrations, witness the traditions that shape young minds in the Himalayas
               </p>
 
-              {/* Play/Pause Control */}
-              <Button
-                onClick={togglePlayPause}
-                className="bg-bvm-gold/20 backdrop-blur-sm text-background border-2 border-bvm-gold hover:bg-bvm-gold hover:text-bvm-navy transition-all duration-300"
-                size="lg"
-              >
-                {isPlaying ? (
-                  <Pause className="h-5 w-5 mr-2" />
-                ) : (
-                  <Play className="h-5 w-5 mr-2" />
-                )}
-                {isPlaying ? 'Pause' : 'Play'} Legacy Video
-              </Button>
+              {/* Controls */}
+              <div className="flex justify-center gap-4">
+                <Button
+                  onClick={togglePlayPause}
+                  className="bg-bvm-gold/20 backdrop-blur-sm text-background border-2 border-bvm-gold hover:bg-bvm-gold hover:text-bvm-navy transition-all duration-300"
+                  size="lg"
+                >
+                  {isPlaying ? (
+                    <Pause className="h-5 w-5 mr-2" />
+                  ) : (
+                    <Play className="h-5 w-5 mr-2" />
+                  )}
+                  {isPlaying ? 'Pause' : 'Play'} Legacy Video
+                </Button>
+
+                {/* 🔊 Mute / Unmute Button */}
+                <Button
+                  onClick={toggleMute}
+                  className="bg-bvm-gold/20 backdrop-blur-sm text-background border-2 border-bvm-gold hover:bg-bvm-gold hover:text-bvm-navy transition-all duration-300"
+                  size="lg"
+                >
+                  {isMuted ? 'Unmute' : 'Mute'} Audio
+                </Button>
+              </div>
             </div>
           </div>
 
