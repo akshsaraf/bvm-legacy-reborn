@@ -7,10 +7,9 @@ import GlassyPanel from './GlassyPanel';
 
 const ResultsSection = () => {
   const topScorers = [
-    { name: "Arjun Sharma", score: "98.4%", subject: "Science", class: "XII" },
-    { name: "Priya Gupta", score: "97.8%", subject: "Commerce", class: "XII" },
-    { name: "Vikram Singh", score: "96.2%", subject: "Humanities", class: "XII" },
-    { name: "Ananya Verma", score: "98.0%", subject: "Overall", class: "X" }
+    { name: "Dhairya Jain, Harsh Agarwal", score: "98.2%", subject: "Commerce", class: "XII" },
+    { name: "Chitransh Bhatnagar", score: "97.2%", subject: "Science", class: "XII" },
+    { name: "Prianshu Gariya", score: "95.6%", subject: "Commerce", class: "XII" }
   ];
 
   const resultStats = [
@@ -84,22 +83,7 @@ const ResultsSection = () => {
               </TabsTrigger>
             </TabsList>
             
-            <TabsContent value="class12" className="mt-6 p-6">
-              <div className="grid md:grid-cols-3 gap-4 text-center">
-                <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                  <div className="text-2xl font-bold text-blue-600">Science</div>
-                  <div className="text-sm text-blue-500 mt-1">Average: 87.2%</div>
-                </div>
-                <div className="bg-green-50 p-4 rounded-lg border border-green-200">
-                  <div className="text-2xl font-bold text-green-600">Commerce</div>
-                  <div className="text-sm text-green-500 mt-1">Average: 85.6%</div>
-                </div>
-                <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
-                  <div className="text-2xl font-bold text-purple-600">Humanities</div>
-                  <div className="text-sm text-purple-500 mt-1">Average: 84.1%</div>
-                </div>
-              </div>
-            </TabsContent>
+           
             
             <TabsContent value="class10" className="mt-6 p-6">
               <div className="text-center">
